@@ -1,0 +1,13 @@
+{
+  "name": "stitch-organa",
+  "version": "2.4.0",
+  "description": "ORGANA - Platform Manajemen Modern Organisasi Mahasiswa & BEM",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js"
+  },
+  "keywords": ["organa", "bem", "student-organization", "management"],
+  "author": "Antigravity Expert Fullstack & UI/UX",
+  "license": "MIT"
+}

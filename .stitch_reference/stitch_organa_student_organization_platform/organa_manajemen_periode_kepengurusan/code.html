@@ -1,0 +1,437 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><meta content="web_dashboard" name="shell-type"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed": "#c5e7ff",
+          "tertiary-fixed": "#d0e8dd",
+          "primary-container": "#a9d5f2",
+          "primary": "#37637c",
+          "surface-container-high": "#dfe9f8",
+          "on-primary-fixed": "#001e2d",
+          "on-surface-variant": "#41484c",
+          "surface-container": "#e4effe",
+          "tertiary-fixed-dim": "#b4ccc1",
+          "outline": "#71787d",
+          "on-error": "#ffffff",
+          "inverse-on-surface": "#e9f1ff",
+          "outline-variant": "#c1c7cd",
+          "primary-fixed-dim": "#a0cce9",
+          "surface-tint": "#37637c",
+          "surface-container-highest": "#d9e3f2",
+          "on-primary-fixed-variant": "#1c4b63",
+          "on-secondary": "#ffffff",
+          "tertiary": "#4d635b",
+          "on-tertiary-container": "#485d55",
+          "inverse-primary": "#a0cce9",
+          "on-primary-container": "#305d76",
+          "surface-container-low": "#eef4ff",
+          "on-background": "#121c27",
+          "error": "#ba1a1a",
+          "on-secondary-fixed": "#151f00",
+          "error-container": "#ffdad6",
+          "on-surface": "#121c27",
+          "on-error-container": "#93000a",
+          "on-primary": "#ffffff",
+          "surface-dim": "#d1dbea",
+          "on-secondary-fixed-variant": "#394e00",
+          "secondary-fixed": "#c7f169",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#0a1f19",
+          "inverse-surface": "#27313d",
+          "secondary-container": "#c5ee66",
+          "on-tertiary": "#ffffff",
+          "secondary": "#4c6700",
+          "tertiary-container": "#bdd5ca",
+          "secondary-fixed-dim": "#acd44f",
+          "surface": "#f7f9ff",
+          "surface-variant": "#d9e3f2",
+          "on-tertiary-fixed-variant": "#364b43",
+          "on-secondary-container": "#506c00",
+          "background": "#f7f9ff",
+          "surface-bright": "#f7f9ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "margin-sm": "1rem",
+          "gutter-sm": "1rem",
+          "margin": "2rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem"
+        },
+        "fontFamily": {
+          "display-hero": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "DM Sans"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-lg": [
+            "DM Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "display-hero-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "DM Sans"
+          ]
+        },
+        "fontSize": {
+          "display-hero": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "display-hero-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen bg-gradient-to-b from-[#DCEEFF] via-[#F5F7F8] to-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/80 backdrop-blur-xl z-50 flex flex-col shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] overflow-y-auto"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm flex-shrink-0"><div class="flex items-center gap-space-sm"><img alt="Organa Brandmark Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBbSj2rHhNmdii28Fdd7MeN2cto6fSog2HNye0_yns73QEWA4OCbLKFs9euVFg-W_zVMQYl-TZlTbRB8zBEQtISU8pMlPkSbBrRhzzNh9IVlml7mhTwrr9CWR6PgPKZ1Vo0XnqDVCHjRHhLKNf21sZYBdrfL8y3ymzm-J72InP_Rt2fSaWDXnXFE0mFP1X_Zvmu6JglO6shdVytOVFsUWMfEZYQiTCEc-2GDkJFNC0d"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-extrabold">ORGANA</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">ERD v2.0</span></div><div class="px-space-md py-space-xs flex-shrink-0"><div class="p-space-sm rounded-xl bg-surface-container-low/70 flex items-center justify-between shadow-sm"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status Kampus</span><span class="font-label-md text-label-md text-on-surface font-semibold">Universitas Terpadu</span></div><span class="material-symbols-outlined text-primary text-[20px]">verified</span></div></div><div class="flex-1 px-space-md py-space-sm space-y-space-md"><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Utama</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="/dashboard">Dashboard</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kalender" href="/kalender">Kalender Kegiatan</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Struktur &amp; Organisasi</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a aria-current="page" class="flex items-center px-space-md py-2 transition-all bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full" data-path="periode" href="/periode">Periode Kepengurusan</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="divisi" href="/divisi">Divisi &amp; Departemen</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="jabatan" href="/jabatan">Jabatan &amp; Hierarki</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="anggota" href="/anggota">Data Master Anggota</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="keanggotaan" href="/keanggotaan">Penempatan Keanggotaan</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Program Kerja &amp; Kegiatan</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="proker" href="/proker">Program Kerja</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kegiatan" href="/kegiatan">Manajemen Kegiatan</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="presensi" href="/presensi">Presensi Kegiatan</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Tugas &amp; Penugasan</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="tugas" href="/tugas">Manajemen Tugas</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="penugasan" href="/penugasan">Penugasan Anggota</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Laporan &amp; Evaluasi</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="laporan-kegiatan" href="/laporan-kegiatan">Laporan Kegiatan</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="evaluasi-proker" href="/evaluasi-proker">Evaluasi Program Kerja</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Pengaturan &amp; Akses</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pengguna" href="/pengguna">Manajemen Pengguna</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="profil" href="/profil">Profil Pengguna</a></nav></div></div><div class="p-space-md flex-shrink-0"><div class="p-space-sm rounded-xl bg-primary-container/40 flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">cloud_done</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Sinkronisasi Terhubung</span></div><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm"><span class="font-medium text-on-surface-variant/80">Sistem Ormawa</span><span class="material-symbols-outlined text-[14px]">chevron_right</span><span class="font-bold text-primary">Panel Organisasi</span></div><div class="h-4 w-px bg-outline-variant/60 hidden md:block"></div><button class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low hover:bg-surface-container transition-colors text-on-surface" type="button"><span class="material-symbols-outlined text-primary text-[18px]">event_repeat</span><span class="font-label-md text-label-md font-semibold">2024/2025 (BEM FT)</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></button><div class="relative hidden xl:block w-64"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-9 pr-space-md py-1.5 rounded-full bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container placeholder:text-on-surface-variant/70" placeholder="Cari NIM, proker, data..." type="text"></div></div><div class="flex items-center gap-space-sm"><button aria-label="Pencarian Cepat" class="xl:hidden p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Bantuan Cepat" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="relative"><button aria-label="Notifikasi Kegiatan" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-secondary-fixed ring-2 ring-surface-container-lowest"></span></button></div><div class="h-6 w-px bg-outline-variant/50 mx-space-xs"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md font-bold text-on-surface leading-tight">Arya Pratama</span><span class="font-label-sm text-label-sm text-on-surface-variant">Ketua BEM FT</span></div><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center text-on-primary ring-2 ring-primary-container/40"><span class="material-symbols-outlined text-[20px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter lg:px-margin py-space-lg min-h-screen"><div class="flex flex-col w-full space-y-space-lg">
+<!-- Header Section -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-1">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm uppercase tracking-wider font-bold">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Tata Kelola Siklus Masa Bakti</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Periode Kepengurusan</h1>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+        Kelola siklus tahun masa bakti ormawa, tentukan periode aktif sebagai acuan data struktur, divisi, program kerja, dan keanggotaan.
+      </p>
+</div>
+<!-- Actions toolbar -->
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm">
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">filter_list</span>
+<span>Filter Status</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-md py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">file_download</span>
+<span>Ekspor Data (.CSV)</span>
+</button>
+<button class="inline-flex items-center gap-2 px-space-lg py-2.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold shadow-[0_8px_20px_rgba(201,243,106,0.4)] hover:-translate-y-0.5 transition-all" id="btnOpenNewPeriod" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Tambah Periode Baru</span>
+</button>
+</div>
+</section>
+<!-- Top KPI Cards Grid (Airy & Neo-Tactile Glass) -->
+<section class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-gutter">
+<!-- Card 1: Periode Aktif -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-on-secondary-fixed animate-pulse"></span>
+          Aktif Sekarang
+        </span>
+<span class="p-2 rounded-xl bg-primary-container/30 text-primary material-symbols-outlined text-[20px]">verified</span>
+</div>
+<div class="my-space-sm">
+<p class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Tahun Bakti 2024 / 2025</p>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold truncate">Kabinet Sinergi Inovasi</h3>
+</div>
+<div class="grid grid-cols-3 gap-1 pt-space-xs text-center bg-surface-container-low/70 rounded-xl p-2">
+<div>
+<span class="block font-headline-sm text-headline-sm font-extrabold text-primary">148</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pengurus</span>
+</div>
+<div>
+<span class="block font-headline-sm text-headline-sm font-extrabold text-primary">6</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Divisi</span>
+</div>
+<div>
+<span class="block font-headline-sm text-headline-sm font-extrabold text-primary">24</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Proker</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Total Periode -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Histori Ormawa</span>
+<span class="p-2 rounded-xl bg-surface-container text-on-surface-variant material-symbols-outlined text-[20px]">history_edu</span>
+</div>
+<div class="my-space-sm">
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero text-[38px] leading-tight font-extrabold text-on-surface">4</span>
+<span class="font-body-md text-body-md text-on-surface-variant font-medium">Periode Terdata</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Database estafet kepemimpinan sejak 2022.</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface font-label-sm text-label-sm">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-bold">1 Aktif</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-high text-on-surface-variant">2 Demisioner</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant">1 Konsep</span>
+</div>
+</div>
+<!-- Card 3: Masa Berjalan (Progress Ring) -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Masa Jabatan</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">66.7%</span>
+</div>
+<div class="flex items-center gap-space-sm my-space-xs">
+<div class="relative w-14 h-14 flex items-center justify-center flex-shrink-0">
+<svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+<path class="text-surface-container-high" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-width="3.5"></path>
+<path class="text-secondary" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" fill="none" stroke="currentColor" stroke-dasharray="66.7, 100" stroke-linecap="round" stroke-width="3.5"></path>
+</svg>
+<span class="absolute font-headline-sm text-headline-sm font-bold text-on-surface">8<span class="text-[11px] font-normal text-on-surface-variant">/12</span></span>
+</div>
+<div class="min-w-0">
+<h4 class="font-headline-sm text-[16px] text-on-surface font-bold leading-tight">Bulan ke-8 Berjalan</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate mt-0.5">Selesai: Desember 2025</p>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 66.7%"></div>
+</div>
+</div>
+<!-- Card 4: Kesiapan Suksesi & Musma -->
+<div class="relative overflow-hidden rounded-2xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-bold tracking-wider">Regenerasi &amp; Musma</span>
+<span class="px-2.5 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">On Track</span>
+</div>
+<div class="my-space-sm">
+<h4 class="font-headline-sm text-[16px] text-on-surface font-bold leading-snug">Persiapan Pemira &amp; LPJ Akhir</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Draf berkas suksesi dan AD/ART siap ditinjau DPM FT.</p>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface font-label-sm text-label-sm text-primary">
+<span class="material-symbols-outlined text-[16px]">how_to_reg</span>
+<span class="font-semibold">Batas Submit SK: 15 Nov 2025</span>
+</div>
+</div>
+</section>
+<!-- Panel Detail Periode Aktif & Saklar Switch Periode -->
+<section class="rounded-2xl bg-gradient-to-r from-surface-container-low via-surface-container-lowest to-surface-container-low/70 p-space-lg shadow-[0_16px_36px_-10px_rgba(32,42,53,0.08)] relative overflow-hidden">
+<div class="absolute -right-12 -top-12 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-space-lg">
+<!-- Detail Informasi Legalitas Kepengurusan -->
+<div class="space-y-space-sm flex-1">
+<div class="flex flex-wrap items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-extrabold uppercase tracking-wider">
+            Rujukan Global Sistem
+          </span>
+<span class="font-label-sm text-label-sm text-primary font-bold bg-primary-fixed/60 px-2.5 py-0.5 rounded-full">
+            ID: PRD-2024-01
+          </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Terverifikasi Bagian Kemahasiswaan FT</span>
+</div>
+<div class="space-y-1">
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-extrabold tracking-tight">
+            Kabinet Sinergi Inovasi (2024 - 2025)
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">gavel</span>
+            SK Dekan Fakultas Teknik: <strong class="text-on-surface font-semibold">No. 142/SK/FT/2024</strong>
+</p>
+</div>
+<!-- Grid Meta Pengurus & Tanggal -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-bold">Ketua Umum</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5 block truncate">Arya Pratama</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">NIM 210601201</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-bold">Wakil Ketua</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5 block truncate">Farhan Hakim</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">NIM 210601208</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-bold">Pelantikan Resmi</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5 block">15 Jan 2024</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Auditorium Utama</span>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container-lowest/80 backdrop-blur-md shadow-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-bold">Demisioner Terjadwal</span>
+<span class="font-label-md text-label-md font-bold text-on-surface mt-0.5 block">31 Des 2025</span>
+<span class="font-body-sm text-body-sm text-secondary font-bold text-[11px]">Masa Transisi</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons Side -->
+<div class="flex flex-col sm:flex-row lg:flex-col gap-2 shrink-0 justify-center">
+<button class="inline-flex items-center justify-center gap-2 px-space-md py-2.5 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold shadow-md hover:bg-on-primary-fixed-variant transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span>Tetapkan Acuan Global</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-space-md py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">lock_clock</span>
+<span>Kunci Arsip Periode</span>
+</button>
+<button class="inline-flex items-center justify-center gap-2 px-space-md py-2.5 rounded-full bg-surface-container-lowest text-on-surface font-label-md text-label-md font-medium shadow-sm hover:bg-surface-container transition-all" type="button">
+<span class="material-symbols-outlined text-primary text-[18px]">description</span>
+<span>Unduh Salinan SK Rektorat</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Content Layout: Table + Side Drawer/Card Form -->
+<div class="grid grid-cols-1 xl:grid-cols-12 gap-gutter items-start">
+<!-- Kolom Tabel Master Periode (8 Cols on XL) -->
+<div class="xl:col-span-8 space-y-space-md">
+<!-- Card Container Tabel -->
+<div class="rounded-2xl bg-surface-container-lowest shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] overflow-hidden"><div class="p-space-md flex flex-col lg:flex-row lg:items-center justify-between gap-space-sm border-b border-surface-container-high/60"><div><div class="flex items-center gap-2"><h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Daftar Periode Kepengurusan</h3><span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-mono text-[11px] font-bold">tb_periode</span></div><p class="font-body-sm text-body-sm text-on-surface-variant">Arsip hierarki data sesuai skema ERD entitas Periode &amp; relasi subordinat</p></div><div class="flex flex-wrap items-center gap-2"><div class="relative min-w-[200px]"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[16px]">search</span><input class="w-full pl-8 pr-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-body-sm text-[13px] focus:outline-none focus:ring-2 focus:ring-primary-container placeholder:text-on-surface-variant/70" placeholder="Cari kabinet/kode..." type="text"></div><div class="flex items-center gap-1.5 bg-surface-container-low px-3 py-1 rounded-full"><span class="material-symbols-outlined text-primary text-[16px]">filter_alt</span><select aria-label="Filter Status Periode" class="bg-transparent text-on-surface font-label-sm text-label-sm font-semibold focus:outline-none cursor-pointer"><option>Semua Status</option><option>Aktif</option><option>Demisioner</option><option>Perencanaan</option></select></div></div></div><div class="overflow-x-auto"><table class="w-full text-left font-body-md text-body-md text-on-surface"><thead class="bg-surface-container-low text-on-surface-variant font-label-sm text-label-sm uppercase tracking-wider font-bold"><tr><th class="py-3 px-space-md">ID PERIODE (PK)</th><th class="py-3 px-space-md">NAMA PERIODE / KABINET</th><th class="py-3 px-space-md text-center">PERIODE AKTIF (TAHUN MULAI - SELESAI)</th><th class="py-3 px-space-md text-center">RELASI DIVISI &amp; PROKER</th><th class="py-3 px-space-md">STATUS PERIODE</th><th class="py-3 px-space-md text-right">AKSI</th></tr></thead><tbody class="divide-y-0"><tr class="hover:bg-surface-container-low/50 transition-colors bg-secondary-fixed/10"><td class="py-3.5 px-space-md"><div class="font-mono text-[13px] font-bold text-primary flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-primary">vpn_key</span><span>PRD-2024-01</span></div></td><td class="py-3.5 px-space-md"><div class="font-bold text-on-surface">Kabinet Sinergi Inovasi</div><div class="font-body-sm text-[12px] text-on-surface-variant">BEM FT 2024/2025 • SK No. 142/SK/FT/2024</div></td><td class="py-3.5 px-space-md text-center"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container text-on-surface font-mono font-bold text-label-sm"><span class="material-symbols-outlined text-[14px] text-primary">calendar_today</span>2024 – 2025</span></td><td class="py-3.5 px-space-md text-center"><div class="font-label-md text-label-md font-bold text-on-surface">6 Divisi • 24 Proker</div><div class="font-body-sm text-[11px] text-on-surface-variant">148 Anggota Terhubung</div></td><td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-extrabold uppercase shadow-sm"><span class="material-symbols-outlined text-[15px] font-bold">check_circle</span>Aktif</span></td><td class="py-3.5 px-space-md text-right"><div class="inline-flex items-center justify-end gap-1"><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Lihat Relasi ERD" type="button"><span class="material-symbols-outlined text-[18px]">account_tree</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Edit Periode" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Kunci Arsip Periode" type="button"><span class="material-symbols-outlined text-[18px]">lock</span></button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors"><td class="py-3.5 px-space-md"><div class="font-mono text-[13px] font-semibold text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-outline">vpn_key</span><span>PRD-2023-01</span></div></td><td class="py-3.5 px-space-md"><div class="font-semibold text-on-surface">Kabinet Garda Cipta</div><div class="font-body-sm text-[12px] text-on-surface-variant">BEM FT 2023/2024 • SK No. 110/SK/FT/2023</div></td><td class="py-3.5 px-space-md text-center"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-mono font-medium text-label-sm"><span class="material-symbols-outlined text-[14px] text-outline">calendar_today</span>2023 – 2024</span></td><td class="py-3.5 px-space-md text-center"><div class="font-label-md text-label-md font-medium text-on-surface">6 Divisi • 21 Proker</div><div class="font-body-sm text-[11px] text-on-surface-variant">142 Anggota Terhubung</div></td><td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[15px]">history</span>Demisioner</span></td><td class="py-3.5 px-space-md text-right"><div class="inline-flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm font-bold transition-all" title="Jadikan Periode Aktif" type="button">Set Aktif</button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Lihat Relasi ERD" type="button"><span class="material-symbols-outlined text-[18px]">account_tree</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Edit Periode" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Arsipkan" type="button"><span class="material-symbols-outlined text-[18px]">archive</span></button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors"><td class="py-3.5 px-space-md"><div class="font-mono text-[13px] font-semibold text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-outline">vpn_key</span><span>PRD-2022-01</span></div></td><td class="py-3.5 px-space-md"><div class="font-semibold text-on-surface">Kabinet Karya Bersama</div><div class="font-body-sm text-[12px] text-on-surface-variant">BEM FT 2022/2023 • SK No. 095/SK/FT/2022</div></td><td class="py-3.5 px-space-md text-center"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-mono font-medium text-label-sm"><span class="material-symbols-outlined text-[14px] text-outline">calendar_today</span>2022 – 2023</span></td><td class="py-3.5 px-space-md text-center"><div class="font-label-md text-label-md font-medium text-on-surface">5 Divisi • 18 Proker</div><div class="font-body-sm text-[11px] text-on-surface-variant">130 Anggota Terhubung</div></td><td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-semibold"><span class="material-symbols-outlined text-[15px]">history</span>Demisioner</span></td><td class="py-3.5 px-space-md text-right"><div class="inline-flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded-full bg-surface-container-low hover:bg-surface-container text-primary font-label-sm text-label-sm font-bold transition-all" title="Jadikan Periode Aktif" type="button">Set Aktif</button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Lihat Relasi ERD" type="button"><span class="material-symbols-outlined text-[18px]">account_tree</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Edit Periode" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-on-surface transition-colors" title="Arsipkan" type="button"><span class="material-symbols-outlined text-[18px]">archive</span></button></div></td></tr><tr class="hover:bg-surface-container-low/50 transition-colors"><td class="py-3.5 px-space-md"><div class="font-mono text-[13px] font-semibold text-on-surface-variant flex items-center gap-1.5"><span class="material-symbols-outlined text-[15px] text-outline">vpn_key</span><span>PRD-2025-01</span></div></td><td class="py-3.5 px-space-md"><div class="font-semibold text-on-surface">Kabinet Masa Depan FT</div><div class="font-body-sm text-[12px] text-on-surface-variant">BEM FT 2025/2026 (Praperencanaan)</div></td><td class="py-3.5 px-space-md text-center"><span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-low text-on-surface-variant font-mono font-medium text-label-sm"><span class="material-symbols-outlined text-[14px] text-outline">calendar_today</span>2025 – 2026</span></td><td class="py-3.5 px-space-md text-center"><div class="font-label-md text-label-md text-on-surface-variant">– Divisi • 0 Proker</div><div class="font-body-sm text-[11px] text-on-surface-variant">0 Anggota Terhubung</div></td><td class="py-3.5 px-space-md"><span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-sm text-label-sm font-bold"><span class="material-symbols-outlined text-[15px]">pending</span>Perencanaan</span></td><td class="py-3.5 px-space-md text-right"><div class="inline-flex items-center justify-end gap-1"><button class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold transition-all hover:bg-secondary-fixed-dim" title="Jadikan Periode Aktif" type="button">Set Aktif</button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Lihat Relasi ERD" type="button"><span class="material-symbols-outlined text-[18px]">account_tree</span></button><button class="p-1.5 rounded-full hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Edit Periode" type="button"><span class="material-symbols-outlined text-[18px]">edit</span></button><button class="p-1.5 rounded-full hover:bg-error-container text-on-surface-variant hover:text-error transition-colors" title="Hapus Draf" type="button"><span class="material-symbols-outlined text-[18px]">delete</span></button></div></td></tr></tbody></table></div><div class="p-space-md bg-surface-container-low/40 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm"><span>Menampilkan 4 dari 4 entri periode kepengurusan</span><div class="flex items-center gap-1"><button class="p-1 rounded-full text-outline-variant cursor-not-allowed" disabled="" type="button"><span class="material-symbols-outlined text-[18px]">chevron_left</span></button><span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-bold">1</span><button class="p-1 rounded-full text-outline-variant cursor-not-allowed" disabled="" type="button"><span class="material-symbols-outlined text-[18px]">chevron_right</span></button></div></div></div>
+<!-- Informasi Catatan Siklus Kepengurusan ERD -->
+<div class="p-space-md rounded-2xl bg-surface-container-low flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] flex-shrink-0 mt-0.5">info</span>
+<div class="space-y-1">
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface">Ketentuan Penguncian Relasi Data Periode</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
+            Sesuai integritas relasional ERD v2.0, ketika periode berstatus <strong>Demisioner</strong>, seluruh data <em>Divisi</em>, <em>Jabatan</em>, <em>Penempatan Keanggotaan</em>, dan <em>Program Kerja</em> otomatis beralih menjadi <em>Read-Only Archive</em> untuk menjamin keaslian riwayat laporan tahunan.
+          </p>
+</div>
+</div>
+</div>
+<!-- Kolom Form Panel / Drawer Tambah Periode (4 Cols on XL) -->
+<div class="xl:col-span-4 space-y-space-md">
+<div class="rounded-2xl bg-surface-container-lowest p-space-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] relative overflow-hidden">
+<div class="flex items-center justify-between pb-space-sm">
+<div class="flex items-center gap-2">
+<span class="p-2 rounded-xl bg-secondary-fixed text-on-secondary-fixed material-symbols-outlined text-[20px]">add_box</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Entri Periode Baru</h3>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Inisialisasi tahun masa jabatan ormawa</p>
+</div>
+</div>
+<span class="font-mono text-label-sm font-bold text-primary bg-primary-fixed/40 px-2 py-0.5 rounded-full">
+            FORM-ERD
+          </span>
+</div>
+<form class="space-y-space-sm pt-space-xs" id="formAddPeriod" onsubmit="event.preventDefault(); alert('Periode Baru Berhasil Disimpan ke Sistem!');"><div class="p-space-sm rounded-xl bg-surface-container-low border border-outline-variant/30 text-on-surface-variant text-[11px] leading-relaxed flex items-start gap-2"><span class="material-symbols-outlined text-primary text-[18px] shrink-0">schema</span><span><strong class="text-on-surface font-semibold">Skema Relasi:</strong> Periode ini akan menjadi entitas induk (<span class="font-mono font-bold text-primary">PK</span>) bagi tabel Divisi (<code class="font-mono text-primary font-bold">tb_divisi</code>) dan Keanggotaan (<code class="font-mono text-primary font-bold">tb_keanggotaan</code>).</span></div><div class="space-y-1"><label class="block font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider flex items-center justify-between"><span>ID Periode (PK)</span><span class="font-mono text-[10px] text-primary bg-primary-fixed/60 px-1.5 py-0.5 rounded font-bold">VARCHAR(20)</span></label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">key</span><input class="w-full pl-9 pr-space-md py-2 rounded-xl bg-surface-container-low text-on-surface font-mono text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container font-bold" name="id_periode" placeholder="PRD-2025-01" required="" type="text" value="PRD-2025-01"></div><p class="font-body-sm text-[11px] text-on-surface-variant">Format standar unik acuan relasi master data entitas.</p></div><div class="space-y-1"><label class="block font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider flex items-center justify-between"><span>Nama Periode / Kabinet</span><span class="font-mono text-[10px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">VARCHAR(100)</span></label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">military_tech</span><input class="w-full pl-9 pr-space-md py-2 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container font-semibold" name="nama_periode" placeholder="Contoh: Kabinet Sinergi Inovasi" required="" type="text" value="Kabinet Daya Reksa FT"></div></div><div class="grid grid-cols-2 gap-space-xs"><div class="space-y-1"><label class="block font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider">Tahun Mulai (YYYY)</label><div class="relative"><input class="w-full px-space-md py-2 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container text-center font-bold font-mono" max="2099" min="2000" name="tahun_mulai" required="" type="number" value="2025"></div></div><div class="space-y-1"><label class="block font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider">Tahun Selesai (YYYY)</label><div class="relative"><input class="w-full px-space-md py-2 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container text-center font-bold font-mono" max="2099" min="2000" name="tahun_selesai" required="" type="number" value="2026"></div></div></div><div class="space-y-1"><label class="block font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider flex items-center justify-between"><span>Status Periode</span><span class="font-mono text-[10px] text-on-surface-variant bg-surface-container px-1.5 py-0.5 rounded">ENUM</span></label><select class="w-full px-space-md py-2 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container font-semibold" name="status"><option value="Perencanaan">Perencanaan (Draf Persiapan)</option><option value="Aktif">Aktif (Operasional Utama)</option><option value="Demisioner">Demisioner (Arsip Selesai)</option></select></div><div class="space-y-1"><label class="block font-label-sm text-label-sm text-on-surface uppercase font-bold tracking-wider">Nomor SK Kemahasiswaan (Opsional)</label><div class="relative"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">verified</span><input class="w-full pl-9 pr-space-md py-2 rounded-xl bg-surface-container-low text-on-surface font-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container" name="no_sk" placeholder="Misal: 198/SK/DPM-FT/2025" type="text"></div></div><div class="p-space-sm rounded-xl bg-surface-container flex items-center justify-between"><div class="flex items-center gap-2"><input class="w-4 h-4 rounded text-secondary-fixed focus:ring-0 accent-[#4c6700]" id="autoSwitch" type="checkbox"><label class="font-label-sm text-label-sm text-on-surface font-semibold cursor-pointer" for="autoSwitch">Tetapkan langsung sebagai periode aktif</label></div></div><div class="pt-space-xs flex flex-col gap-2"><button class="w-full py-2.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold shadow-[0_8px_20px_rgba(201,243,106,0.35)] hover:shadow-lg hover:-translate-y-0.5 transition-all text-center flex items-center justify-center gap-2" type="submit"><span class="material-symbols-outlined text-[18px]">save</span><span>Simpan Periode</span></button><button class="w-full py-2 rounded-full bg-surface-container-low hover:bg-surface-container text-on-surface font-label-md text-label-md transition-colors text-center" type="reset">Reset</button></div></form>
+</div>
+<!-- Quick Action Guide -->
+<div class="p-space-md rounded-2xl bg-surface-container-low/70 space-y-space-xs">
+<h5 class="font-label-md text-label-md font-bold text-on-surface flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[18px] text-primary">alt_route</span>
+<span>Panduan Transisi Periode</span>
+</h5>
+<ul class="font-body-sm text-[12px] text-on-surface-variant space-y-1.5 list-disc pl-4">
+<li>Pastikan LPJ Periode 2024/2025 telah diarsipkan sebelum mengaktifkan periode baru.</li>
+<li>Mengganti status ke <strong>Aktif</strong> akan mengalihkan navigasi dan presensi ormawa ke kabinet terpilih.</li>
+</ul>
+</div>
+</div>
+</div>
+</div></main></div>
+
+</body></html>

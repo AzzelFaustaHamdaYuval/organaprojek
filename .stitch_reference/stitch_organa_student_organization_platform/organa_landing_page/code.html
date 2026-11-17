@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ORGANA - Sistem Manajemen Modern Organisasi Mahasiswa &amp; BEM</title>
+<!-- Google Fonts: Plus Jakarta Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            organa: {
+              navy: '#202A35',
+              sky: '#DCEEFF',
+              skyLight: '#F0F7FF',
+              skyAccent: '#A9D5F2',
+              lime: '#C9F36A',
+              limeDark: '#9BC73A',
+              mint: '#D9F1E6',
+              mintPale: '#EEF8F3',
+              grayBg: '#F8FAFC',
+            }
+          },
+          boxShadow: {
+            'wingly': '0 20px 40px -15px rgba(32, 42, 53, 0.08), 0 0 1px 1px rgba(255, 255, 255, 0.9) inset',
+            'wingly-elevated': '0 30px 60px -12px rgba(32, 42, 53, 0.12), 0 0 1px 1px rgba(255, 255, 255, 0.95) inset',
+            'glow-lime': '0 0 25px rgba(201, 243, 106, 0.45)',
+          },
+          borderRadius: {
+            '3xl': '28px',
+            '4xl': '36px',
+            '5xl': '44px',
+          }
+        }
+      }
+    }
+  </script>
+<!-- Custom CSS for atmospheric hills, glassmorphism and organic shapes -->
+<style data-purpose="wingly-atmospheric-styling">
+    .bg-meadow-gradient {
+      background: linear-gradient(180deg, #DCEEFF 0%, #E6F3FB 25%, #EAF5ED 55%, #D4EEDF 80%, #C4E9D2 100%);
+    }
+
+    .glass-card {
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    /* Hill organic curves mimicking the rolling meadows of Wingly */
+    .hill-contour {
+      border-radius: 50% 50% 0 0 / 25% 25% 0 0;
+    }
+    
+    .floating-tilt-left {
+      transform: perspective(1000px) rotate(-3.5deg) translateY(0px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-tilt-left:hover {
+      transform: perspective(1000px) rotate(-1deg) translateY(-8px);
+    }
+
+    .floating-tilt-right {
+      transform: perspective(1000px) rotate(3deg) translateY(0px);
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .floating-tilt-right:hover {
+      transform: perspective(1000px) rotate(0.5deg) translateY(-8px);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-organa-navy bg-[#F3F9F5] selection:bg-organa-lime selection:text-organa-navy overflow-x-hidden">
+<!-- BEGIN: Navigation -->
+<nav class="fixed top-0 left-0 right-0 z-50 px-4 sm:px-8 py-4 transition-all duration-300" data-purpose="site-navigation">
+<div class="max-w-7xl mx-auto">
+<div class="glass-nav rounded-full px-5 py-3 flex items-center justify-between shadow-wingly">
+<!-- Logo and Brand -->
+<a class="flex items-center gap-3 group" href="#">
+<div class="w-10 h-10 rounded-xl overflow-hidden shadow-sm transition-transform duration-300 group-hover:scale-105">
+<svg fill="none" height="100%" viewbox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#202A35" height="120" rx="28" width="120"></rect>
+<circle cx="60" cy="40" fill="#C9F36A" r="14"></circle>
+<path d="M40 76C40 62 52 50 66 50C80 50 88 62 88 76C88 84 80 90 66 90C48 90 40 84 40 76Z" fill="#A9D5F2" fill-opacity="0.85"></path>
+<path d="M32 66C32 54 44 44 58 44C60 44 62 44.5 64 45C54 49 48 58 48 70C48 78 52 82 54 84C42 82 32 74 32 66Z" fill="#C9F36A"></path>
+<circle cx="78" cy="74" fill="#FFFFFF" r="8"></circle>
+</svg>
+</div>
+<span class="text-xl font-extrabold tracking-tight text-organa-navy">ORGANA</span>
+<span class="hidden sm:inline-block px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider bg-organa-skyAccent/30 text-organa-navy/80 rounded-full">v2.4 Campus</span>
+</a>
+<!-- Desktop Navigation Links -->
+<div class="hidden lg:flex items-center gap-7 text-sm font-semibold text-organa-navy/80">
+<a class="hover:text-organa-navy transition-colors" href="#fitur">Cara Kerja</a>
+<a class="hover:text-organa-navy transition-colors flex items-center gap-1.5" href="#modul">
+            Fitur Unggulan
+            <span class="w-1.5 h-1.5 rounded-full bg-organa-lime inline-block"></span>
+</a>
+<a class="hover:text-organa-navy transition-colors" href="#ormawa">Modul Ormawa</a>
+<a class="hover:text-organa-navy transition-colors" href="#testimoni">Cerita Kampus</a>
+<a class="hover:text-organa-navy transition-colors" href="#faq">Bantuan</a>
+</div>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2.5">
+<a class="text-sm font-bold text-organa-navy px-4 py-2 hover:bg-black/5 rounded-full transition-colors" href="#login">
+            Masuk
+          </a>
+<a class="inline-flex items-center gap-2 bg-organa-navy text-white text-sm font-bold px-5 py-2.5 rounded-full shadow-md hover:bg-opacity-95 transition-all duration-200 group" href="#register">
+<span>Mulai Sekarang</span>
+<span class="w-2 h-2 rounded-full bg-organa-lime group-hover:scale-125 transition-transform"></span>
+</a>
+</div>
+</div>
+</div>
+</nav>
+<!-- END: Navigation -->
+<!-- BEGIN: Hero Section -->
+<header class="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-meadow-gradient overflow-hidden">
+<!-- Atmospheric subtle floating blur rings -->
+<div class="absolute top-16 left-1/4 w-96 h-96 bg-white/40 rounded-full blur-3xl pointer-events-none -z-0"></div>
+<div class="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-organa-lime/20 rounded-full blur-3xl pointer-events-none -z-0"></div>
+<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+<!-- Top Pill Tag -->
+<div class="inline-flex items-center gap-2 bg-white/80 border border-white px-4 py-1.5 rounded-full shadow-sm mb-6 animate-pulse">
+<span class="w-2.5 h-2.5 rounded-full bg-organa-lime"></span>
+<span class="text-xs font-bold text-organa-navy uppercase tracking-wider">Ekosistem Ormawa &amp; BEM Masa Depan</span>
+</div>
+<!-- Main Headline in Wingly Inspired Bold Typography -->
+<h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-organa-navy leading-[1.08] max-w-4xl mx-auto">
+        MAKE YOUR ORGANIZATION <br class="hidden sm:inline"/>
+<span class="relative inline-block">
+          WORK SMARTER.
+          <!-- subtle hand-drawn style underline accent -->
+<svg class="absolute -bottom-2 left-0 w-full h-3 text-organa-lime/80 -z-10" fill="none" preserveaspectratio="none" viewbox="0 0 300 12">
+<path d="M2 9C50 3 150 2 298 6" stroke="currentColor" stroke-linecap="round" stroke-width="5"></path>
+</svg>
+</span>
+</h1>
+<!-- Subheadline -->
+<p class="mt-6 text-lg sm:text-xl text-organa-navy/70 max-w-2xl mx-auto font-medium leading-relaxed">
+        Satu platform terintegrasi untuk mengelola anggota, timeline proker, presensi kegiatan digital via QR, hingga penyusunan LPJ otomatis untuk BEM &amp; Himpunan.
+      </p>
+<!-- Dual Call To Actions -->
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3.5">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-organa-navy hover:bg-black text-white font-bold px-7 py-3.5 rounded-full shadow-wingly transition-all duration-200" href="#demo">
+<span>Mulai Sekarang Gratis</span>
+<span class="bg-organa-lime text-organa-navy text-xs font-black px-2 py-0.5 rounded-full">Bebas Biaya</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-white/80 hover:bg-white text-organa-navy font-bold px-7 py-3.5 rounded-full border border-white shadow-sm transition-all duration-200" href="#preview">
+<svg class="w-5 h-5 text-organa-navy fill-current" viewbox="0 0 24 24">
+<path d="M8 5v14l11-7z"></path>
+</svg>
+<span>Jelajahi Fitur Demo</span>
+</a>
+</div>
+<!-- Hero Visual Showcase Container (Floating Cards inspired by Wingly Composition) -->
+<div class="relative mt-16 max-w-5xl mx-auto pt-6 pb-4" data-purpose="hero-dashboard-mockup">
+<!-- Main Central Campus Dashboard Preview Mockup -->
+<div class="relative bg-white rounded-3xl sm:rounded-4xl p-4 sm:p-7 shadow-wingly-elevated border border-white/90">
+<!-- Mockup Header Bar -->
+<div class="flex items-center justify-between pb-4 border-b border-gray-100">
+<div class="flex items-center gap-2">
+<span class="w-3 h-3 rounded-full bg-red-400"></span>
+<span class="w-3 h-3 rounded-full bg-amber-400"></span>
+<span class="w-3 h-3 rounded-full bg-green-400"></span>
+<span class="ml-3 text-xs font-semibold text-gray-400">portal.organa.ac.id/bem-km/dashboard</span>
+</div>
+<div class="flex items-center gap-2 text-xs font-bold text-organa-navy bg-organa-skyLight px-3 py-1 rounded-full border border-organa-skyAccent/40">
+<span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+              Kabinet Sinergi Prestasi 2024/2025
+            </div>
+</div>
+<!-- Internal Central Visual Mock Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-5 pt-5 text-left">
+<!-- Left Info Column -->
+<div class="md:col-span-4 bg-organa-skyLight/60 rounded-2xl p-5 border border-organa-skyAccent/30 flex flex-col justify-between">
+<div>
+<span class="text-[11px] font-bold uppercase tracking-wider text-organa-navy/60">Ringkasan Organisasi</span>
+<h4 class="text-xl font-extrabold text-organa-navy mt-1">BEM Fakultas Teknik</h4>
+<p class="text-xs text-organa-navy/70 mt-1">12 Departemen &amp; Biro Aktif Terkoordinasi</p>
+<div class="mt-5 space-y-3">
+<div class="flex justify-between items-center text-xs font-bold">
+<span class="text-organa-navy/80">Realisasi KPI Semester Ini</span>
+<span class="text-organa-navy font-extrabold">88.4%</span>
+</div>
+<div class="w-full h-2.5 bg-white rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-organa-skyAccent to-organa-lime rounded-full w-[88%]"></div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-gray-200/50 flex items-center justify-between text-xs font-semibold text-organa-navy/70">
+<span>Rapat Terdekat:</span>
+<span class="text-organa-navy font-bold bg-white px-2 py-0.5 rounded shadow-2xs">Kamis, 19:30 WIB</span>
+</div>
+</div>
+<!-- Middle/Right Interactive Board -->
+<div class="md:col-span-8 bg-organa-mintPale/60 rounded-2xl p-5 border border-organa-mint/60">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-bold uppercase tracking-wider text-organa-navy/70">Aktivitas Program Kerja Berjalan</span>
+<span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2.5 py-0.5 rounded-full">7 Selesai Minggu Ini</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+<div class="bg-white p-3.5 rounded-xl shadow-xs border border-white">
+<span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded">Dept. PSDM</span>
+<p class="text-xs font-extrabold text-organa-navy mt-2">LKMM Pra-Dasar</p>
+<p class="text-[11px] text-gray-500 mt-1">Presensi QR: 240 Peserta</p>
+</div>
+<div class="bg-white p-3.5 rounded-xl shadow-xs border border-white">
+<span class="text-[10px] font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded">Dept. Kominfo</span>
+<p class="text-xs font-extrabold text-organa-navy mt-2">Podcast Kampus #04</p>
+<p class="text-[11px] text-gray-500 mt-1">Editing &amp; Upload LPJ</p>
+</div>
+<div class="bg-white p-3.5 rounded-xl border border-dashed border-gray-300 flex flex-col items-center justify-center text-center">
+<span class="text-xl text-gray-400">+</span>
+<span class="text-[11px] font-bold text-gray-500">Buat Agenda Proker</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Glass Card 1 (Tilted Left): Efisiensi Kepengurusan -->
+<div class="floating-tilt-left absolute -bottom-8 -left-4 sm:-left-8 glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-wingly-elevated max-w-[240px] sm:max-w-[270px] text-left hidden sm:block">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-6 h-6 rounded-full bg-organa-lime flex items-center justify-center text-xs font-black">★</span>
+<span class="text-xs font-bold uppercase tracking-wider text-organa-navy/70">Efisiensi Kerja</span>
+</div>
+<div class="text-3xl font-extrabold text-organa-navy">+38%</div>
+<p class="text-[12px] text-organa-navy/70 mt-1">Waktu koordinasi panitia &amp; birokrasi terhemat setiap proker besar.</p>
+<div class="mt-3 flex items-center gap-1.5 pt-2 border-t border-gray-100">
+<span class="text-[11px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded">Terverifikasi 14 Kampus</span>
+</div>
+</div>
+<!-- Floating Glass Card 2 (Top Right): Anggota Aktif Badge -->
+<div class="floating-tilt-right absolute -top-6 -right-3 sm:-right-8 glass-card rounded-2xl p-4 sm:p-5 shadow-wingly-elevated text-left hidden sm:flex items-center gap-3.5">
+<div class="w-12 h-12 rounded-xl bg-organa-navy text-organa-lime flex flex-col items-center justify-center font-extrabold text-lg leading-none shadow-sm">
+            1.2k+
+            <span class="text-[8px] text-white/80 font-normal mt-0.5">MAHASISWA</span>
+</div>
+<div>
+<div class="text-sm font-extrabold text-organa-navy leading-tight">Pengurus Ormawa Aktif</div>
+<div class="text-[11px] text-organa-navy/60 font-medium">BEM, Himpunan &amp; UKM</div>
+</div>
+</div>
+<!-- Floating Glass Card 3 (Bottom Right): Real-time Attendance Telemetry -->
+<div class="floating-tilt-right absolute -bottom-10 -right-4 sm:-right-10 glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-5 shadow-wingly-elevated max-w-[250px] text-left hidden md:block">
+<div class="flex items-center justify-between text-[11px] font-bold text-gray-500 mb-1">
+<span>Presensi Pleno</span>
+<span class="text-emerald-600">● LIVE</span>
+</div>
+<div class="text-2xl font-black text-organa-navy">94.2%</div>
+<div class="text-[11px] text-gray-500">142 Hadir dari 150 Pengurus</div>
+<!-- Sparkline Mini Visual -->
+<svg class="w-full h-8 mt-2" fill="none" viewbox="0 0 100 25">
+<path d="M0 20 Q 25 15, 50 18 T 100 6" fill="none" stroke="#202A35" stroke-linecap="round" stroke-width="2.5"></path>
+<circle cx="100" cy="6" fill="#C9F36A" r="3" stroke="#202A35" stroke-width="1.5"></circle>
+</svg>
+</div>
+</div>
+</div>
+</header>
+<!-- END: Hero Section -->
+<!-- BEGIN: Partner Ormawa Logos -->
+<section class="py-12 bg-white/70 border-y border-gray-200/50" data-purpose="trusted-by-organizations">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<p class="text-xs font-bold uppercase tracking-widest text-organa-navy/50 mb-6">
+        Dipercaya oleh Dewan Perwakilan Mahasiswa, BEM &amp; Lembaga Kampus Ternama
+      </p>
+<div class="flex flex-wrap items-center justify-center gap-8 sm:gap-14 opacity-75 grayscale hover:grayscale-0 transition-all duration-300">
+<div class="flex items-center gap-2 font-black text-sm tracking-tight text-organa-navy">
+<span class="w-6 h-6 rounded-md bg-organa-navy text-white text-xs flex items-center justify-center font-serif">B</span>
+          BEM UNIVERSITAS
+        </div>
+<div class="flex items-center gap-2 font-black text-sm tracking-tight text-organa-navy">
+<span class="w-6 h-6 rounded-md bg-organa-skyAccent text-organa-navy text-xs flex items-center justify-center font-mono">IF</span>
+          HMIF INFORMATIKA
+        </div>
+<div class="flex items-center gap-2 font-black text-sm tracking-tight text-organa-navy">
+<span class="w-6 h-6 rounded-md bg-organa-lime text-organa-navy text-xs flex items-center justify-center">DPM</span>
+          DPM FAKULTAS TEKNIK
+        </div>
+<div class="flex items-center gap-2 font-black text-sm tracking-tight text-organa-navy">
+<span class="w-6 h-6 rounded-md bg-organa-navy text-organa-lime text-xs flex items-center justify-center">♫</span>
+          UKM SENI &amp; MUSIK
+        </div>
+<div class="flex items-center gap-2 font-black text-sm tracking-tight text-organa-navy">
+<span class="w-6 h-6 rounded-md bg-emerald-700 text-white text-xs flex items-center justify-center">R</span>
+          UKM PENALARAN RISET
+        </div>
+</div>
+</div>
+</section>
+<!-- END: Partner Ormawa Logos -->
+<!-- BEGIN: Features Section -->
+<section class="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" data-purpose="features-grid" id="fitur">
+<div class="text-center max-w-3xl mx-auto mb-16">
+<span class="text-xs font-bold uppercase tracking-widest text-organa-navy bg-organa-lime px-3 py-1 rounded-full">
+        Semua Kebutuhan Ormawa
+      </span>
+<h2 class="text-3xl sm:text-5xl font-extrabold text-organa-navy mt-4 tracking-tight">
+        Tinggalkan Spreadsheet Berantakan, Saatnya Kendali Penuh Organisasi.
+      </h2>
+<p class="mt-4 text-base sm:text-lg text-organa-navy/70">
+        Dirancang khusus sesuai dinamika kepengurusan mahasiswa: pergantian kabinet tahunan, birokrasi kampus yang cepat, dan akuntabilitas LPJ.
+      </p>
+</div>
+<!-- 4 Pillars Grid with Soft Frosted Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<!-- Feature Card 1 -->
+<div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-wingly hover:shadow-wingly-elevated transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-organa-skyLight border border-organa-skyAccent/50 flex items-center justify-center text-organa-navy mb-6">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-organa-navy">Bagan Struktur Organisasi &amp; Anggota Interaktif</h3>
+<p class="text-organa-navy/70 text-sm mt-3 leading-relaxed">
+          Ketahui hirarki kabinet, data staf muda, kontak darurat, divisi kepanitiaan, hingga riwayat demisioner tanpa risiko data hilang saat serah terima jabatan (Sertijab).
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+<span class="text-xs font-bold text-organa-navy/80">Support Multi-Divisi &amp; BPH</span>
+<span class="text-xs font-bold text-organa-navy underline cursor-pointer">Lihat Demo Bagan →</span>
+</div>
+</div>
+<!-- Feature Card 2 -->
+<div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-wingly hover:shadow-wingly-elevated transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-organa-mintPale border border-organa-mint flex items-center justify-center text-organa-navy mb-6">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-organa-navy">Timeline Terpusat &amp; Anti-Tabrakan Proker</h3>
+<p class="text-organa-navy/70 text-sm mt-3 leading-relaxed">
+          Hindari jadwal proker antar-departemen yang bertabrakan di tanggal yang sama. Kalender master interaktif menyinkronkan aula kampus, izin dekanat, dan rapat rutin.
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+<span class="text-xs font-bold text-organa-navy/80">Auto Sync Google Calendar</span>
+<span class="text-xs font-bold text-organa-navy underline cursor-pointer">Cek Kalender Master →</span>
+</div>
+</div>
+<!-- Feature Card 3 -->
+<div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-wingly hover:shadow-wingly-elevated transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-700 mb-6">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-organa-navy">Presensi Digital Dinamis Berbasis QR Code</h3>
+<p class="text-organa-navy/70 text-sm mt-3 leading-relaxed">
+          Ucapkan selamat tinggal pada tanda tangan kertas yang sering hilang. Presensi pleno, webinar, dan musyawarah mahasiswa terekam instan dan anti-titip absen dengan radius GPS.
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+<span class="text-xs font-bold text-organa-navy/80">Geofencing Kampus &amp; Anti-Fraud</span>
+<span class="text-xs font-bold text-organa-navy underline cursor-pointer">Coba Scan QR →</span>
+</div>
+</div>
+<!-- Feature Card 4 -->
+<div class="bg-white rounded-3xl p-8 border border-gray-100 shadow-wingly hover:shadow-wingly-elevated transition-all duration-300">
+<div class="w-14 h-14 rounded-2xl bg-organa-navy text-organa-lime flex items-center justify-center mb-6">
+<svg class="w-7 h-7" fill="none" stroke="currentColor" viewbox="0 0 24 24">
+<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+</div>
+<h3 class="text-2xl font-bold text-organa-navy">LPJ Maker Otomatis &amp; Transparansi Anggaran</h3>
+<p class="text-organa-navy/70 text-sm mt-3 leading-relaxed">
+          Kumpulkan nota digital, hitung serapan dana secara otomatis, lalu unduh format Laporan Pertanggungjawaban (LPJ) terstandar siap diajukan ke Wakil Dekan / Kemahasiswaan.
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center justify-between">
+<span class="text-xs font-bold text-organa-navy/80">Ekspor Langsung PDF &amp; Word</span>
+<span class="text-xs font-bold text-organa-navy underline cursor-pointer">Preview Format LPJ →</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Features Section -->
+<!-- BEGIN: Interactive Showcase Section -->
+<section class="py-20 bg-meadow-gradient relative overflow-hidden" data-purpose="interactive-showcase" id="ormawa">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="bg-white/80 rounded-4xl sm:rounded-5xl p-6 sm:p-12 border border-white shadow-wingly-elevated">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+<div class="lg:col-span-5 text-left space-y-5">
+<span class="text-xs font-bold uppercase tracking-wider text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full">
+              Dirancang untuk Mahasiswa Indonesia
+            </span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-organa-navy leading-tight">
+              Satu Dasbor Lengkap. Tanpa Rumit, Tanpa Pelatihan Panjang.
+            </h2>
+<p class="text-sm sm:text-base text-organa-navy/75 leading-relaxed">
+              Pengurus baru dapat langsung beradaptasi dalam 10 menit. Dilengkapi template agenda, notulensi rapat, dan matriks pertanggungjawaban divisi.
+            </p>
+<ul class="space-y-3 pt-2 text-sm font-semibold text-organa-navy">
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-organa-lime flex items-center justify-center text-xs font-black text-organa-navy">✓</span>
+                Integrasi SSO Akun Kampus (.ac.id)
+              </li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-organa-lime flex items-center justify-center text-xs font-black text-organa-navy">✓</span>
+                Hak akses berjenjang (Ketum, Sekjen, Bendahara, Kadiv, Staf)
+              </li>
+<li class="flex items-center gap-2.5">
+<span class="w-5 h-5 rounded-full bg-organa-lime flex items-center justify-center text-xs font-black text-organa-navy">✓</span>
+                Arsip Sertijab abadi antar-periode kepengurusan
+              </li>
+</ul>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 bg-organa-navy text-white text-sm font-bold px-6 py-3 rounded-full hover:bg-black transition-all" href="#demo">
+                Jadwalkan Demo Kampus Anda
+                <span>→</span>
+</a>
+</div>
+</div>
+<!-- Graphic Mockup Panel -->
+<div class="lg:col-span-7 bg-white rounded-3xl p-6 border border-gray-100 shadow-md">
+<div class="flex items-center justify-between pb-4 border-b border-gray-100 text-xs font-bold text-organa-navy">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-organa-lime"></span>
+                Progress Program Kerja Kabinet
+              </span>
+<span class="text-gray-400">Periode 2024/2025</span>
+</div>
+<div class="space-y-4 mt-5">
+<!-- Item 1 -->
+<div class="p-4 rounded-2xl bg-organa-skyLight/50 border border-organa-skyAccent/30 flex items-center justify-between">
+<div>
+<span class="text-[10px] font-bold uppercase text-blue-600 bg-blue-100 px-2 py-0.5 rounded">Proker Akbar</span>
+<div class="font-extrabold text-sm text-organa-navy mt-1">Informatics Expo &amp; Job Fair 2025</div>
+<div class="text-xs text-gray-500">Divisi Acara &amp; Sponsorship • 45 Anggota</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-black text-organa-navy">92%</div>
+<span class="text-[10px] font-bold text-emerald-600">Siap Pelaksanaan</span>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="p-4 rounded-2xl bg-organa-mintPale/50 border border-organa-mint/50 flex items-center justify-between">
+<div>
+<span class="text-[10px] font-bold uppercase text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">Pengmas</span>
+<div class="font-extrabold text-sm text-organa-navy mt-1">Bina Desa &amp; Literasi Digital Pesisir</div>
+<div class="text-xs text-gray-500">Divisi Pengabdian Masyarakat • 28 Anggota</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-black text-organa-navy">68%</div>
+<span class="text-[10px] font-bold text-amber-600">Survei Lapangan</span>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="p-4 rounded-2xl bg-gray-50 border border-gray-100 flex items-center justify-between">
+<div>
+<span class="text-[10px] font-bold uppercase text-purple-700 bg-purple-100 px-2 py-0.5 rounded">Internal</span>
+<div class="font-extrabold text-sm text-organa-navy mt-1">Upgrading &amp; Malam Keakraban Pengurus</div>
+<div class="text-xs text-gray-500">Biro Pengembangan Internal • 80 Anggota</div>
+</div>
+<div class="text-right">
+<div class="text-sm font-black text-organa-navy">100%</div>
+<span class="text-[10px] font-bold text-blue-600">LPJ Telah Diupload</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Interactive Showcase Section -->
+<!-- BEGIN: Testimonials Section -->
+<section class="py-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" data-purpose="testimonials" id="testimoni">
+<div class="text-center max-w-2xl mx-auto mb-16">
+<span class="text-xs font-bold uppercase tracking-widest text-organa-navy/60">Testimoni Nyata</span>
+<h2 class="text-3xl sm:text-4xl font-extrabold text-organa-navy mt-2">
+        Suara Para Pemimpin Kampus
+      </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="glass-card rounded-3xl p-7 shadow-wingly flex flex-col justify-between">
+<p class="text-sm text-organa-navy/80 leading-relaxed italic">
+          "Sebelum pakai Organa, tiap kali ganti kepengurusan data dokumen LPJ 3 tahun lalu hilang entah ke mana. Sekarang seluruh arsip BEM rapi di satu wadah cloud terpusat."
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-organa-navy text-organa-lime font-bold flex items-center justify-center text-sm">
+            RP
+          </div>
+<div>
+<div class="text-sm font-bold text-organa-navy">Rafi Pratama</div>
+<div class="text-xs text-organa-navy/60">Ketua BEM KM Universitas 2024</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="glass-card rounded-3xl p-7 shadow-wingly flex flex-col justify-between border-2 border-organa-lime/60">
+<p class="text-sm text-organa-navy/80 leading-relaxed italic">
+          "Fitur presensi QR dengan verifikasi lokasi kampus mempermudah pleno anggota. Kami gak pernah lagi pusing rekap tanda tangan fisik saat pembuatan laporan ke dekanat."
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-organa-lime text-organa-navy font-bold flex items-center justify-center text-sm">
+            AN
+          </div>
+<div>
+<div class="text-sm font-bold text-organa-navy">Adinda Nurul</div>
+<div class="text-xs text-organa-navy/60">Sekretaris Jenderal HMIF</div>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="glass-card rounded-3xl p-7 shadow-wingly flex flex-col justify-between">
+<p class="text-sm text-organa-navy/80 leading-relaxed italic">
+          "Penyusunan anggaran UKM kami jadi super transparan. Mahasiswa dan pembina bisa pantau realisasi dana tanpa saling curiga. Sungguh game changer untuk ormawa!"
+        </p>
+<div class="mt-6 pt-5 border-t border-gray-100 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-organa-skyAccent text-organa-navy font-bold flex items-center justify-center text-sm">
+            FW
+          </div>
+<div>
+<div class="text-sm font-bold text-organa-navy">Fajar Wicaksono</div>
+<div class="text-xs text-organa-navy/60">Bendahara Umum DPM FT</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Testimonials Section -->
+<!-- BEGIN: Call To Action Banner -->
+<section class="py-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto" data-purpose="bottom-cta-banner">
+<div class="bg-organa-navy rounded-4xl sm:rounded-5xl p-8 sm:p-16 text-center text-white relative overflow-hidden shadow-wingly-elevated">
+<!-- Background Ambient Glow -->
+<div class="absolute -right-20 -top-20 w-80 h-80 rounded-full bg-organa-lime/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 -bottom-20 w-80 h-80 rounded-full bg-organa-skyAccent/20 blur-3xl pointer-events-none"></div>
+<div class="relative z-10 max-w-3xl mx-auto">
+<span class="inline-block px-3 py-1 bg-white/10 rounded-full text-xs font-bold tracking-wider uppercase text-organa-lime mb-4">
+          Pendaftaran Ormawa 2025 Dibuka
+        </span>
+<h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight leading-tight">
+          Siap Mengubah Cara Kerja Organisasimu?
+        </h2>
+<p class="mt-4 text-base sm:text-lg text-white/70">
+          Gabungkan organisasi Anda hari ini dan rasakan kemudahan mengelola ratusan anggota dan puluhan proker dalam hitungan menit.
+        </p>
+<!-- Quick Activation Form -->
+<div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 max-w-lg mx-auto">
+<input class="w-full px-5 py-3.5 rounded-full text-sm text-organa-navy bg-white border-0 focus:ring-2 focus:ring-organa-lime shadow-inner" placeholder="Masukkan email ketua / ormawa..." type="email"/>
+<button class="w-full sm:w-auto bg-organa-lime hover:bg-organa-limeDark text-organa-navy font-extrabold text-sm px-7 py-3.5 rounded-full transition-all duration-200 whitespace-nowrap shadow-glow-lime">
+            Coba Gratis
+          </button>
+</div>
+<p class="mt-3 text-xs text-white/50">Gratis untuk 1 periode kepengurusan pertama • Tanpa kartu kredit</p>
+</div>
+</div>
+</section>
+<!-- END: Call To Action Banner -->
+<!-- BEGIN: Footer -->
+<footer class="bg-white border-t border-gray-200/80 pt-16 pb-12" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-2 md:grid-cols-5 gap-8 pb-12 border-b border-gray-100">
+<!-- Brand Summary -->
+<div class="col-span-2">
+<div class="flex items-center gap-3 mb-4">
+<div class="w-9 h-9 rounded-xl overflow-hidden shadow-xs">
+<svg fill="none" height="100%" viewbox="0 0 120 120" width="100%" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#202A35" height="120" rx="28" width="120"></rect>
+<circle cx="60" cy="40" fill="#C9F36A" r="14"></circle>
+<path d="M40 76C40 62 52 50 66 50C80 50 88 62 88 76C88 84 80 90 66 90C48 90 40 84 40 76Z" fill="#A9D5F2" fill-opacity="0.85"></path>
+<path d="M32 66C32 54 44 44 58 44C60 44 62 44.5 64 45C54 49 48 58 48 70C48 78 52 82 54 84C42 82 32 74 32 66Z" fill="#C9F36A"></path>
+<circle cx="78" cy="74" fill="#FFFFFF" r="8"></circle>
+</svg>
+</div>
+<span class="text-xl font-extrabold text-organa-navy tracking-tight">ORGANA</span>
+</div>
+<p class="text-xs text-organa-navy/70 max-w-sm leading-relaxed">
+            Platform ekosistem digital tata kelola organisasi kemahasiswaan, BEM, DPM, Himpunan Jurusan, dan UKM di seluruh perguruan tinggi Indonesia.
+          </p>
+<div class="mt-4 flex items-center gap-3 text-organa-navy/60 text-xs">
+<span>Jakarta • Bandung • Surabaya • Yogyakarta</span>
+</div>
+</div>
+<!-- Links: Solusi -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider text-organa-navy mb-3">Solusi</h4>
+<ul class="space-y-2 text-xs font-semibold text-organa-navy/70">
+<li><a class="hover:text-organa-navy" href="#">BEM Universitas</a></li>
+<li><a class="hover:text-organa-navy" href="#">Himpunan Mahasiswa</a></li>
+<li><a class="hover:text-organa-navy" href="#">Unit Kegiatan Mahasiswa</a></li>
+<li><a class="hover:text-organa-navy" href="#">Dewan Perwakilan (DPM)</a></li>
+<li><a class="hover:text-organa-navy" href="#">Kepanitiaan Terbuka</a></li>
+</ul>
+</div>
+<!-- Links: Modul -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider text-organa-navy mb-3">Fitur</h4>
+<ul class="space-y-2 text-xs font-semibold text-organa-navy/70">
+<li><a class="hover:text-organa-navy" href="#">Bagan Struktur Kabinet</a></li>
+<li><a class="hover:text-organa-navy" href="#">Kalender Proker</a></li>
+<li><a class="hover:text-organa-navy" href="#">Presensi GPS &amp; QR</a></li>
+<li><a class="hover:text-organa-navy" href="#">Generator LPJ</a></li>
+<li><a class="hover:text-organa-navy" href="#">Notulensi &amp; Arsip</a></li>
+</ul>
+</div>
+<!-- Links: Bantuan -->
+<div>
+<h4 class="text-xs font-bold uppercase tracking-wider text-organa-navy mb-3">Dukungan</h4>
+<ul class="space-y-2 text-xs font-semibold text-organa-navy/70">
+<li><a class="hover:text-organa-navy" href="#">Panduan Sertijab</a></li>
+<li><a class="hover:text-organa-navy" href="#">Template Surat Ormawa</a></li>
+<li><a class="hover:text-organa-navy" href="#">FAQ Mahasiswa</a></li>
+<li><a class="hover:text-organa-navy" href="#">Kontak WhatsApp</a></li>
+<li><a class="hover:text-organa-navy" href="#">Kebijakan Privasi</a></li>
+</ul>
+</div>
+</div>
+<!-- Bottom Credits -->
+<div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-organa-navy/60 gap-4">
+<div>
+          © 2025 Organa Campus Technologies. Hak Cipta Dilindungi Undang-Undang.
+        </div>
+<div class="flex items-center gap-6">
+<a class="hover:underline" href="#">Syarat &amp; Ketentuan</a>
+<a class="hover:underline" href="#">Panduan Keamanan</a>
+<a class="hover:underline" href="#">Status Server</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Footer -->
+</body></html>

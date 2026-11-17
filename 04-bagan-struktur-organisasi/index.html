@@ -1,0 +1,1135 @@
+﻿<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "primary-fixed": "#c5e7ff",
+          "tertiary-fixed": "#d0e8dd",
+          "primary-container": "#a9d5f2",
+          "primary": "#37637c",
+          "surface-container-high": "#dfe9f8",
+          "on-primary-fixed": "#001e2d",
+          "on-surface-variant": "#41484c",
+          "surface-container": "#e4effe",
+          "tertiary-fixed-dim": "#b4ccc1",
+          "outline": "#71787d",
+          "on-error": "#ffffff",
+          "inverse-on-surface": "#e9f1ff",
+          "outline-variant": "#c1c7cd",
+          "primary-fixed-dim": "#a0cce9",
+          "surface-tint": "#37637c",
+          "surface-container-highest": "#d9e3f2",
+          "on-primary-fixed-variant": "#1c4b63",
+          "on-secondary": "#ffffff",
+          "tertiary": "#4d635b",
+          "on-tertiary-container": "#485d55",
+          "inverse-primary": "#a0cce9",
+          "on-primary-container": "#305d76",
+          "surface-container-low": "#eef4ff",
+          "on-background": "#121c27",
+          "error": "#ba1a1a",
+          "on-secondary-fixed": "#151f00",
+          "error-container": "#ffdad6",
+          "on-surface": "#121c27",
+          "on-error-container": "#93000a",
+          "on-primary": "#ffffff",
+          "surface-dim": "#d1dbea",
+          "on-secondary-fixed-variant": "#394e00",
+          "secondary-fixed": "#c7f169",
+          "surface-container-lowest": "#ffffff",
+          "on-tertiary-fixed": "#0a1f19",
+          "inverse-surface": "#27313d",
+          "secondary-container": "#c5ee66",
+          "on-tertiary": "#ffffff",
+          "secondary": "#4c6700",
+          "tertiary-container": "#bdd5ca",
+          "secondary-fixed-dim": "#acd44f",
+          "surface": "#f7f9ff",
+          "surface-variant": "#d9e3f2",
+          "on-tertiary-fixed-variant": "#364b43",
+          "on-secondary-container": "#506c00",
+          "background": "#f7f9ff",
+          "surface-bright": "#f7f9ff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "space-xl": "2.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "margin-sm": "1rem",
+          "gutter-sm": "1rem",
+          "margin": "2rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem"
+        },
+        "fontFamily": {
+          "display-hero": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "body-sm": ["DM Sans"],
+          "label-sm": ["Plus Jakarta Sans"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"],
+          "body-lg": ["DM Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-lg": ["Plus Jakarta Sans"],
+          "label-md": ["Plus Jakarta Sans"],
+          "display-hero-mobile": ["Plus Jakarta Sans"],
+          "body-md": ["DM Sans"]
+        },
+        "fontSize": {
+          "display-hero": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.03em", "fontWeight": "800" }],
+          "headline-sm": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+          "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "body-sm": ["12px", { "lineHeight": "18px", "fontWeight": "400" }],
+          "label-sm": ["10px", { "lineHeight": "14px", "letterSpacing": "0.04em", "fontWeight": "700" }],
+          "headline-lg-mobile": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "700" }],
+          "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+          "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+          "label-lg": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+          "label-md": ["12px", { "lineHeight": "16px", "letterSpacing": "0.02em", "fontWeight": "600" }],
+          "display-hero-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+          "body-md": ["14px", { "lineHeight": "22px", "fontWeight": "400" }]
+        }
+      },
+    },
+  }</script><link rel="stylesheet" href="../shared/organa-dark.css"/>
+</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen bg-gradient-to-b from-[#DCEEFF] via-[#F5F7F8] to-surface">
+  <!-- Ambient Neon Orbs -->
+  <div class="fixed -left-32 top-20 w-96 h-96 rounded-full bg-violet-600/15 blur-[120px] pointer-events-none animate-pulse-glow"></div>
+  <div class="fixed right-10 top-40 w-[30rem] h-[30rem] rounded-full bg-cyan-500/15 blur-[140px] pointer-events-none animate-pulse-glow" style="animation-delay: 2s;"></div>
+  <div class="fixed right-1/3 bottom-10 w-80 h-80 rounded-full bg-pink-500/10 blur-[120px] pointer-events-none"></div>
+  <div class="fixed left-1/4 bottom-20 w-96 h-96 rounded-full bg-[#C9F36A]/10 blur-[130px] pointer-events-none"></div>
+<aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/80 backdrop-blur-xl z-50 flex flex-col shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] overflow-y-auto">
+  <div class="h-16 px-space-md flex items-center justify-between gap-space-sm flex-shrink-0">
+    <div class="flex items-center gap-space-sm">
+      <img alt="Organa Brandmark Logo" class="h-8 w-auto object-contain" src="../04-bagan-struktur-organisasi/assets/logoaja.png"/>
+      <span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-extrabold">ORGANA</span>
+    </div>
+    <span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">v2.4</span>
+  </div>
+  <div class="px-space-md py-space-xs flex-shrink-0">
+    <div class="p-space-sm rounded-xl bg-surface-container-low/70 flex items-center justify-between">
+      <div class="flex flex-col">
+        <span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status Kampus</span>
+        <span class="font-label-md text-label-md text-on-surface font-semibold">Universitas Negeri Semarang</span>
+      </div>
+      <span class="material-symbols-outlined text-primary text-[20px]">verified</span>
+    </div>
+  </div>
+  <div class="flex-1 px-space-md py-space-sm space-y-space-md">
+    <div class="space-y-space-xs">
+      <p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Utama</p>
+      <nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full">
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="../02-dashboard-utama/index.html"><span class="material-symbols-outlined text-[20px]">dashboard</span><span>Dashboard</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kalender-kegiatan" href="../06-kalender-kegiatan/index.html"><span class="material-symbols-outlined text-[20px]">calendar_month</span><span>Kalender Kegiatan</span></a>
+      </nav>
+    </div>
+    <div class="space-y-space-xs">
+      <p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Organisasi</p>
+      <nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full">
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="anggota" href="../03-manajemen-anggota/index.html"><span class="material-symbols-outlined text-[20px]">group</span><span>Anggota (Members)</span></a>
+        <a aria-current="page" class="flex items-center gap-space-sm px-space-md py-2 transition-all bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full" data-path="struktur-organisasi" href="../04-bagan-struktur-organisasi/index.html"><span class="material-symbols-outlined text-[20px]">account_tree</span><span>Struktur Organisasi</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="divisi-dan-departemen" href="../11-pengelolaan-divisi/index.html"><span class="material-symbols-outlined text-[20px]">lan</span><span>Divisi &amp; Departemen</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="periode-kepengurusan" href="../12-periode-kepengurusan/index.html"><span class="material-symbols-outlined text-[20px]">history_edu</span><span>Periode Kepengurusan</span></a>
+      </nav>
+    </div>
+    <div class="space-y-space-xs">
+      <p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Program Kerja</p>
+      <nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full">
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="program-kerja" href="../05-manajemen-program-kerja/index.html"><span class="material-symbols-outlined text-[20px]">event_available</span><span>Program Kerja</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="manajemen-kegiatan" href="../06-kalender-kegiatan/index.html"><span class="material-symbols-outlined text-[20px]">rocket_launch</span><span>Manajemen Kegiatan</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="presensi-dan-kehadiran" href="../09-presensi-qr/index.html"><span class="material-symbols-outlined text-[20px]">how_to_reg</span><span>Presensi &amp; Kehadiran</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="penugasan-dan-tugas" href="../10-penugasan-kanban/index.html"><span class="material-symbols-outlined text-[20px]">assignment</span><span>Penugasan &amp; Tugas</span></a>
+      </nav>
+    </div>
+    <div class="space-y-space-xs">
+      <p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Laporan &amp; Evaluasi</p>
+      <nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full">
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="laporan-pertanggungjawaban-lpj" href="../07-laporan-lpj-keuangan/index.html"><span class="material-symbols-outlined text-[20px]">description</span><span>Laporan LPJ</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="evaluasi-kinerja" href="../08-evaluasi-kinerja/index.html"><span class="material-symbols-outlined text-[20px]">insights</span><span>Evaluasi Kinerja</span></a>
+      </nav>
+    </div>
+    <div class="space-y-space-xs">
+      <p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Pengaturan</p>
+      <nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full">
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pengaturan-organisasi" href="../13-manajemen-akun/index.html"><span class="material-symbols-outlined text-[20px]">tune</span><span>Pengaturan Organisasi</span></a>
+        <a class="flex items-center gap-space-sm px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="profil" href="../14-profil/index.html"><span class="material-symbols-outlined text-[20px]">person</span><span>Profil</span></a>
+      </nav>
+    </div>
+  </div>
+  <div class="p-space-md flex-shrink-0">
+    <div class="p-space-sm rounded-xl bg-primary-container/40 flex items-center justify-between">
+      <div class="flex items-center gap-space-xs">
+        <span class="material-symbols-outlined text-primary text-[18px]">cloud_done</span>
+        <span class="font-label-sm text-label-sm text-on-surface font-semibold">Sinkronisasi Otomatis</span>
+      </div>
+      <span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span>
+    </div>
+  </div>
+</aside>
+<div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]">
+  <div class="flex items-center gap-space-md">
+    <div class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface cursor-pointer hover:bg-surface-container transition-colors">
+      <span class="material-symbols-outlined text-primary text-[18px]">event_repeat</span>
+      <span class="font-label-md text-label-md font-semibold">Periode Aktif: 2024/2025 (BEM FASILKOM)</span>
+      <span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span>
+    </div>
+    <div class="relative hidden xl:block w-72">
+      <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+      <input class="w-full pl-9 pr-space-md py-1.5 rounded-full bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container placeholder:text-on-surface-variant/70" placeholder="Cari program, anggota, dokumen..." type="text"/>
+    </div>
+  </div>
+  <div class="flex items-center gap-space-sm">
+    <button aria-label="Pencarian Cepat" class="xl:hidden p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors">
+      <span class="material-symbols-outlined text-[20px]">search</span>
+    </button>
+    <button aria-label="Bantuan Cepat" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors">
+      <span class="material-symbols-outlined text-[20px]">help_outline</span>
+    </button>
+    <div class="relative">
+      <button aria-label="Notifikasi Kegiatan" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors relative">
+        <span class="material-symbols-outlined text-[20px]">notifications</span>
+        <span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-secondary-fixed ring-2 ring-surface-container-lowest"></span>
+      </button>
+    </div>
+    <div class="h-6 w-px bg-outline-variant/50 mx-space-xs"></div>
+    <div class="flex items-center gap-space-sm pl-space-xs">
+      <div class="flex flex-col text-right hidden sm:flex">
+        <span class="font-label-md text-label-md font-bold text-on-surface leading-tight">Charly Gerald</span>
+        <span class="font-label-sm text-label-sm text-on-surface-variant">Ketua BEM FASILKOM</span>
+      </div>
+      <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
+        <span class="material-symbols-outlined text-on-primary text-[18px]">person</span>
+      </div>
+    </div>
+  </div>
+</header><main class="w-full pt-16 px-gutter lg:px-margin py-space-lg min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Action & Meta Section -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-md mb-space-lg">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">Struktur Organisasi</span>
+<span class="text-outline-variant font-label-sm">/</span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold">BEM FASILKOM 2024/2025</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight font-extrabold flex items-center gap-space-xs">
+        Bagan Struktur &amp; Hierarki Kabinet
+      </h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+        Visualisasi interaktif bagan kepengurusan BEM Fakultas Ilmu Komputer periode aktif 2024/2025 (Kabinet Nevarandum Avieera). Hubungan komando, koordinasi, dan fungsi divisi terintegrasi secara real-time.
+      </p>
+</div>
+<!-- Quick Tool Actions -->
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm bg-surface-container-lowest/80 backdrop-blur-md p-1.5 rounded-full shadow-[0_8px_24px_-4px_rgba(169,213,242,0.35)]">
+<div class="relative">
+<select class="appearance-none pl-4 pr-8 py-2 rounded-full bg-surface-container-low font-label-md text-label-md text-on-surface font-semibold focus:outline-none cursor-pointer" id="periodSelector">
+<option value="2024">Periode: 2024/2025 (Nevarandum Avieera)</option>
+<option value="2023">Periode: 2023/2024 (Argahara Revisidenta)</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[16px]">expand_more</span>
+</div>
+<div class="hidden sm:flex items-center bg-surface-container-low rounded-full px-2 py-1 gap-1">
+<button class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" id="zoomOutBtn" title="Perkecil Bagan">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<span class="font-label-sm text-label-sm text-on-surface font-bold px-1 select-none" id="zoomLevelDisplay">100%</span>
+<button class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" id="zoomInBtn" title="Perbesar Bagan">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="p-1 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-all" id="zoomResetBtn" title="Reset Zoom">
+<span class="material-symbols-outlined text-[18px]">restart_alt</span>
+</button>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-3.5 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold shadow-sm transition-all filter-tier-btn active" id="filterAll">
+          Semua
+        </button>
+<button class="px-3.5 py-1.5 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold transition-all filter-tier-btn" id="filterBPH">
+          BPH
+        </button>
+<button class="px-3.5 py-1.5 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-label-md text-label-md font-semibold transition-all filter-tier-btn" id="filterDivisi">
+          Departemen
+        </button>
+</div>
+<button class="flex items-center gap-1 px-4 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md font-bold hover:shadow-md hover:bg-on-primary-fixed-variant transition-all" id="exportBtn">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Unduh Bagan</span>
+</button>
+</div>
+</div>
+<!-- KPI Overview Micro-Wafers -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-space-sm mb-space-lg">
+<div class="p-space-sm sm:p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Total Pengurus</span>
+<div class="font-headline-md text-headline-md font-extrabold text-on-surface mt-0.5">77 <span class="text-label-md font-body-md text-on-surface-variant font-normal">Mahasiswa</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary-fixed/50 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">badge</span>
+</div>
+</div>
+<div class="p-space-sm sm:p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Badan &amp; Departemen</span>
+<div class="font-headline-md text-headline-md font-extrabold text-on-surface mt-0.5">7 <span class="text-label-md font-body-md text-on-surface-variant font-normal">Departemen</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed/60 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[22px]">domain</span>
+</div>
+</div>
+<div class="p-space-sm sm:p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Agenda Aktif</span>
+<div class="font-headline-md text-headline-md font-extrabold text-on-surface mt-0.5">24 <span class="text-label-md font-body-md text-on-surface-variant font-normal">Program Kerja</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed/50 flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[22px]">task_alt</span>
+</div>
+</div>
+<div class="p-space-sm sm:p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-md shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Status Verifikasi</span>
+<div class="font-headline-md text-headline-md font-extrabold text-primary mt-0.5">100% <span class="text-label-md font-body-md text-on-surface-variant font-normal">Disahkan Dekan</span></div>
+</div>
+<div class="w-10 h-10 rounded-xl bg-primary-container/40 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">verified_user</span>
+</div>
+</div>
+</div>
+<!-- Interactive Chart Container -->
+<div class="relative w-full rounded-3xl bg-surface-container-lowest/60 backdrop-blur-xl p-space-md lg:p-space-xl overflow-hidden shadow-[0_20px_40px_-12px_rgba(32,42,53,0.08)]">
+<!-- Subtle Watermark Graphic Backdrop -->
+<div class="absolute -right-24 -bottom-24 w-96 h-96 rounded-full bg-primary-fixed/20 blur-3xl pointer-events-none"></div>
+<div class="absolute -left-20 top-20 w-80 h-80 rounded-full bg-secondary-fixed/20 blur-3xl pointer-events-none"></div>
+<!-- Tree View Zoomable Canvas -->
+<div class="w-full overflow-x-auto transition-transform duration-200 origin-top pb-12" id="canvasViewport">
+<div class="min-w-[1080px] flex flex-col items-center select-none pt-4" id="treeContainer">
+<!-- TIER 0: DEWAN PEMBINA & DEKANAT (Supervisory - Dashed Stems) -->
+<div class="w-full flex justify-center mb-6" id="tierSupervisory">
+<div class="flex items-center gap-space-lg p-space-sm px-space-lg rounded-2xl bg-surface-container-low/90 backdrop-blur-md shadow-[0_4px_16px_rgba(32,42,53,0.04)]">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block font-bold">Penasihat Dekanat</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Prof. Dr. Ir. Hendra Wibawa, M.Kom.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Dekan Fakultas Ilmu Komputer</span>
+</div>
+</div>
+<div class="h-8 w-px bg-outline-variant/40"></div>
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed">
+<span class="material-symbols-outlined text-[20px]">school</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block font-bold">Pembina Kemahasiswaan</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">Dr. Eng. Ratna Dewi, S.T., M.Sc.</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant block">Wakil Dekan III Bidang Kemahasiswaan</span>
+</div>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container font-label-sm text-label-sm font-semibold text-primary">Garis Pengawasan</span>
+</div>
+</div>
+<!-- Vertical Dashed Bridge to Presidium -->
+<div class="w-px h-8 border-l-2 border-dashed border-primary/30"></div>
+<!-- TIER 1: KETUA & WAKIL KETUA UMUM (Presidium Core) -->
+<div class="tier-section flex flex-col items-center" id="tier1">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg w-[760px] max-w-full">
+<!-- Ketua Umum Node -->
+<div class="relative group cursor-pointer bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_12px_28px_-6px_rgba(32,42,53,0.08)] hover:shadow-[0_20px_36px_-8px_rgba(169,213,242,0.45)] transition-all -translate-y-0.5 hover:-translate-y-1.5 node-card" onclick="selectDivision('presidium-ketum')">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Close-up professional portrait of an Indonesian male student leader wearing a dark navy blazer and white collared shirt against a clean bright studio background, soft warm lighting, confident expression" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgCPjBSzP9i0iFoI8xhP3kdnOvhZpjn4cuf-hMLPmEAvHMcXeQLwYWRyyNP6wno0-IZ5R-SqXe4u4Z6WXhnI4P5KmXB06mq-8ictzCqr-ZhaDeTv-dSKEvxvNVfF73awuBx8qj5kLJIZntkgdqCRp0dms72XnUqZQdBc80FsJPpHmK_q50Kb3lOpLuWZDBwFeS4tFM-3YBLa8CygU_EzOQ4JlczbRJ2Jh-GBleewc"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-secondary-fixed flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-on-secondary-fixed text-[12px] font-bold">star</span>
+</span>
+</div>
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-extrabold uppercase tracking-wider inline-block mb-1">
+                      Ketua Umum
+                    </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-snug">Charly Gerald Simanjuntak</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Teknik Informatika '24 • 2400001</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Pesan Cepat">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">visibility</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">100% Pengawasan Kabinet</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-bold">Mandataris</span>
+</div>
+</div>
+<!-- Wakil Ketua Umum Node -->
+<div class="relative group cursor-pointer bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_12px_28px_-6px_rgba(32,42,53,0.08)] hover:shadow-[0_20px_36px_-8px_rgba(169,213,242,0.45)] transition-all -translate-y-0.5 hover:-translate-y-1.5 node-card" onclick="selectDivision('presidium-waketum')">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="relative">
+<img class="w-14 h-14 rounded-full object-cover shadow-sm" data-alt="Portrait of an approachable Indonesian male university student leader wearing a neat collared shirt and engineering faculty badge, vibrant campus backdrop with natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf1KkeCYej7ydgD_YAsJIxHjz9bpo4S0X1uQyawowkgSxJBJxjq3T3KMjkMZKihFAR3DFFMadUhJe3cdjdAPIhLE6ZdcUpeQjj1-P5bOZs46DDmqgU0R2ZQAouvm3xufcLw3zmo-_8k674CF0eCYPK3AwpCXeyVLE_XjvtPbxNYrHWR7yMBSl1d_5Tz1ZTazeJgZ1uaXRDB-4qSXlvGNhtMryahJp1SxettBtsjfE"/>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-primary-fixed flex items-center justify-center shadow-xs">
+<span class="material-symbols-outlined text-on-primary-fixed text-[12px] font-bold">shield</span>
+</span>
+</div>
+<div>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-extrabold uppercase tracking-wider inline-block mb-1">
+                      Wakil Ketua Umum
+                    </span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold leading-snug">Azzel Fausta Hamda Yuval</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant font-medium">Teknik Informatika '24 • 2400002</p>
+</div>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-low hover:bg-surface-container-high flex items-center justify-center text-primary transition-colors" title="Pesan Cepat">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+</button>
+</div>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">sync_alt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">Operasional Internal 7 Departemen</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-bold">Internal Lead</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Stem from Tier 1 to Tier 2 -->
+<div class="w-0.5 h-10 bg-primary/40"></div>
+<!-- TIER 2: BADAN PENGURUS HARIAN (Sekjen & Bendum) -->
+<div class="tier-section flex flex-col items-center" id="tier2">
+<div class="flex items-center justify-center relative w-full mb-3">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold uppercase tracking-wider">
+              Badan Pengurus Harian (BPH)
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-xl w-[820px] max-w-full relative">
+<!-- Lateral connector bar between Sekjen and Bendum -->
+<div class="hidden md:block absolute top-1/2 left-32 right-32 h-0.5 bg-primary/30 -z-0"></div>
+<!-- Sekjen Card -->
+<div class="relative z-10 cursor-pointer bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_10px_24px_-6px_rgba(32,42,53,0.06)] hover:shadow-lg transition-all node-card" onclick="selectDivision('sekretaris')">
+<div class="flex items-start gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of an Indonesian female university student in modern smart business attire with warm smile, indoor daylight, representing a college administration secretary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx31MOCHg5aACQXNNquftHZx6tctcncJ0TFuRBsRFLefo04FN_yw1jFCTGGhpvEAU2HnRP-kLRcP-upFeROXHDN4pSxbPuI7K0hJ4M_cSStNvSg2LeHsOJzrDDgiAWKDrpNaBPTO2rFV3a7Hi2dMhip8b3DbUHDPuzVKzEYLKmtU4hEjNEyuiD5qT89t9YDMCPKoYQe_vRBX4e27oo4wHmdQS8Zyo8StPX43uDfVw"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">Sekretaris Umum</span>
+<span class="font-label-sm text-label-sm text-primary font-bold"> </span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-1">Fathiyya Zahrotussyifa</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Teknik Informatika '24</p>
+<div class="mt-3 p-2 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">folder_open</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Arsip &amp; Tata Laksana</span>
+</div>
+<span class="font-label-sm text-label-sm font-extrabold text-on-surface">184 Dokumen</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bendum Card -->
+<div class="relative z-10 cursor-pointer bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_10px_24px_-6px_rgba(32,42,53,0.06)] hover:shadow-lg transition-all node-card" onclick="selectDivision('bendahara ')">
+<div class="flex items-start gap-space-sm">
+<img class="w-12 h-12 rounded-full object-cover" data-alt="Portrait of an Indonesian young man in formal college student attire wearing glasses with a confident polite demeanor, office lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAokR4MPdWseLahR8aZrWaF47V2i84O-llylk-nnm-ZGH_AuMbY19DA-I3n05IOX8q2jOIjtfn1IQ98xVG18wuaicm4fks1axrRuMGLrUnOZl6rjqtScUeq877tFfpK1_2Aqc7YGlyzkbvkWpEG2yeX8_WEK2-9ix9P_MOAgj0Mg4Db4uITasAXxI5GShrdjdQyH7GSHa_DKNGlZZL9xSS-Yk4I5COrVQ0ph_S6sZ4"/>
+<div class="flex-1">
+<div class="flex items-center justify-between">
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold">Bendahara Umum</span>
+<span class="font-label-sm text-label-sm text-secondary font-bold"> </span>
+</div>
+<h4 class="font-label-lg text-label-lg font-bold text-on-surface mt-1">Mohamad Nahdi Hidayat</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Teknik Informatika '24</p>
+<div class="mt-3 p-2 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">account_balance_wallet</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Kas Mandiri &amp; DIPA</span>
+</div>
+<span class="font-label-sm text-label-sm font-extrabold text-on-surface">Rp 48.5M LPJ</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Branching Connector SVG to Tier 3 -->
+<div class="w-full flex justify-center py-2">
+<svg class="w-[960px] h-12 overflow-visible" fill="none" viewbox="0 0 960 48" xmlns="http://www.w3.org/2000/svg">
+<!-- Center Vertical Drop -->
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="480" x2="480" y1="0" y2="24"></line>
+<!-- Horizontal Bus Line -->
+<path class="text-primary/30" d="M 80 24 H 880" stroke="currentColor" stroke-linecap="round" stroke-width="2"></path>
+<!-- Drops to 6 divisions -->
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="80" x2="80" y1="24" y2="48"></line>
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="240" x2="240" y1="24" y2="48"></line>
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="400" x2="400" y1="24" y2="48"></line>
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="560" x2="560" y1="24" y2="48"></line>
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="720" x2="720" y1="24" y2="48"></line>
+<line class="text-primary/30" stroke="currentColor" stroke-width="2" x1="880" x2="880" y1="24" y2="48"></line>
+</svg>
+</div>
+<!-- TIER 3: DIVISI & DEPARTEMEN TEKNIS (7 Divisions with Ekokre Centered Below Akasin) -->
+<div class="tier-section w-full" id="tier3">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md w-full max-w-6xl mx-auto">
+<!-- Card 1: Kominfo & Media -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer border-2 border-primary" id="card-kominfo" onclick="selectDivision('kominfo')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">desktop_mac</span>
+                  Departemen I
+                </span>
+<span class="font-label-sm text-label-sm text-primary font-bold">13 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Komunikasi &amp; Informasi (Kominfo)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Desain Visual, Sosmed, Portal Web &amp; Dokumentasi</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an energetic Indonesian male student lead of media division with camera strap on shoulder, soft indoor campus daylight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCX2Muuu21cCwWqxRWKL99vOUw3QpPrs1pdzdlyvZ3PZYD6jHxSWkWGAyOS2wElRwit5cLNT80U4ToykdOmy-yQWyJFruwMmtCm6VKv5xTvw4fzmjXHmt-42M-QiNspQZxX7HYhVvvdPJyTAOM1y-a03IN6nWOttKViLNBtgfjSoCBKMuVygVdzBoSJdXXfsmtbXW4kwITRf2mfLfLzL_gU-OD0bixyuU33RsTTK5g"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Muhammad Alfa Khakim</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep Kominfo</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px] font-bold">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 2: PSDM Mahasiswa -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer" id="card-psdm" onclick="selectDivision('psdm')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">psychology</span>
+                  Departemen II
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">8 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Pengembangan SDM (PSDM)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Kaderisasi, LKMM, Mentoring &amp; Pelatihan Internal</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an Indonesian female university student in university blazer looking sharp and friendly, bright soft campus background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2TVFgofjbZHkejUHKAnj8VC-ay0w1jbjQdz2UoShq4mC-ATWoEgjZU53TzdlvPLK1Mja0Uqup2Kb9aKRV5NZQsmWA1_JC4uZaOz6wTcDUW-FzX7OgOwgAf4iEpzFXWVdiRdl76QvWUkVAq0gbWajsuGwdanmIVjyKFx-Z6Vmj_HlmOpu0xDhuPycok3IWtjdGzs48Fl96eaIqM_ZPow6R3PaCX0793kqOv0BzZbg"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Fadhil Syarief Pratomo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep PSDM</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 3: Hublu & Alumni -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer" id="card-eksternal" onclick="selectDivision('eksternal')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">handshake</span>
+                  Departemen III
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">10 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Eksternal</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Partnership BUMN/Swasta, Ikoma &amp; Jaringan Alumni</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Close up of an Indonesian male student with clean haircut and bright smile in blue suit, professional studio lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCPC9s_KQPgDffNROoIqgbs3w28m7hnfg1JowI2oCfWv9CfxA-9PlAXS3QdC1zvNbsexjmMxEaGaJfWJSxdhQ70d5GubFI-YomryAymopGqesvk5mp4PBjlNJmgfKKenx6ZQoRlqqMxST5-nMhZJKgdS34Msx0B5ABVKmo5b6kWbsz2lB8a3Wlgz150Nw73Qs2Y6VT-cNd1Ey4bloI91AeTJv1rvqn0SbaBzXPRhE"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Fahlevi Fahad Aqmadinna</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep Eksternal</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 4: Sosial Masyarakat -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer" id="card-sosmas" onclick="selectDivision('sosmas')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">volunteer_activism</span>
+                  Departemen IV
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">12 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Sosial Masyarakat (Sosmas)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Pengabdian Masyarakat, Donor Darah &amp; Tanggap Bencana</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of a young Indonesian male university volunteer in casual organizational polo shirt, outdoor community service setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuASK5hRMd3iRyoMxGdHpVBECvu2b6npCD3S_o2Wvj1e8o90Tr1XCybt1sO7fCNgSgkCm3ErOZDmZMr2hBl1OcdKEBp7fOrxfoue9gImUnB_Bma-PZEiMOnRD-jkqoMNiwtGZlC3VZR8z5OIqRbe-C_qmMAaB-T0PPWTv0bZL1rxWPxs8rR4iMUM94ANu704Q5q3tFfcJ2nGW7ePGZ1egkIfyxmVdIvpEBZz9oMX_RU"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Hema Septia Bemanda</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep Sosmas</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 5: Akademik Sinergi (Akasin) -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer" id="card-akasin" onclick="selectDivision('akasin')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">policy</span>
+                  Departemen V
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">10 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Akademik Sinergi (Akasin)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Informasi akademik, pendataan mahasiswa berprestasi, &amp; forum diskusi</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an intelligent Indonesian female student wearing hijab and glasses, holding a notebook in university library setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6rXWkHTQugYqm1__rw738MooNXPoSzkno8q6Nw4TMpehvjM5pwUY374rRKjiby8Lezuy0vYeNzmC8dHR9VCDsVjV__jKz2ITIUAUYDbXOfkj0Qt4agKt0vPaBihVYhYATORjGZwqu0DFqBsKTU3TRth-wk3eQo8pDCjPuzRwu3ixt--OjAVSkgIR2gawPpgYfsI7DAjfc6JGr6oBxmEKKfbC204UAqwJqjCVjxJs"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Rafif Sakha Efendi</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep Akasin</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+<!-- Card 6: Minat, Bakat & Olahraga (Mikat) -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer" id="card-mikat" onclick="selectDivision('mikat')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">sports_volleyball</span>
+                  Departemen VI
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">10 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Minat &amp; Bakat (Mikat)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Pekan Olahraga Tahunan, Musik &amp; Komunitas Seni</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an athletic and cheerful Indonesian male student wearing sporty college jacket, outdoor sports hall background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgTtv5hdmD1rrxtlQWZ9bZWxIau08Nw0ULRr1HGuJyGcblUBkbpMKP3rZGyQo42C68XZaY4emUllwgKfY1GQ7qjDsEhwwuHywfjF-TSG6us78L1AVuq-ZZqlI5jkrJ3v5MGsrSlM1Sx7qjtFqlaQfrDiK_qjlAGiTXxTOhoh-qcw92bA2u6gPqjWjCBtVxq-7gBxir3PZTAfqX_RkJ2f6qoHrnkOk5E1dMjulyEBw"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Renhard Padolski Herlambang</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep Mikat</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+
+<!-- Card 7: Ekonomi Kreatif (Ekokre) - Centered in Middle Column Below Akasin -->
+<div class="division-card relative bg-surface-container-lowest rounded-2xl p-space-md shadow-[0_8px_20px_-4px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_32px_-6px_rgba(169,213,242,0.4)] transition-all cursor-pointer lg:col-start-2" id="card-ekokre" onclick="selectDivision('ekokre')">
+<div class="flex items-center justify-between mb-3">
+<span class="px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">storefront</span>
+                  Departemen VII
+                </span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold">10 Anggota</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-extrabold">Ekonomi Kreatif (Ekokre)</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-1 mt-0.5">Pilar penggerak finansial dan pengembangan bisnis kreatif</p>
+<div class="mt-4 pt-3 border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of Dicky Maulana Aziz, head of Ekonomi Kreatif division wearing smart casual attire with friendly smile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6rXWkHTQugYqm1__rw738MooNXPoSzkno8q6Nw4TMpehvjM5pwUY374rRKjiby8Lezuy0vYeNzmC8dHR9VCDsVjV__jKz2ITIUAUYDbXOfkj0Qt4agKt0vPaBihVYhYATORjGZwqu0DFqBsKTU3TRth-wk3eQo8pDCjPuzRwu3ixt--OjAVSkgIR2gawPpgYfsI7DAjfc6JGr6oBxmEKKfbC204UAqwJqjCVjxJs"/>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface font-bold block leading-tight">Dicky Maulana Aziz</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadep Ekokre</span>
+</div>
+</div>
+<span class="w-6 h-6 rounded-full bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Division Detail Explorer (Inspector Drawer/Bottom Card) -->
+<div class="mt-space-lg rounded-3xl bg-surface-container-lowest p-space-md lg:p-space-lg shadow-[0_16px_36px_-8px_rgba(32,42,53,0.08)] border-t border-surface-container" id="inspectorPanel">
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md mb-space-md">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-fixed" id="inspectorIcon">
+<span class="material-symbols-outlined text-[28px]">desktop_mac</span>
+</div>
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-container text-on-primary-container font-label-sm text-label-sm font-bold uppercase tracking-wider" id="inspectorTag">
+              Departemen I
+            </span>
+<span class="w-1.5 h-1.5 rounded-full bg-outline-variant"></span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-bold" id="inspectorMemberCount">13 Anggota Terdaftar</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface font-extrabold" id="inspectorTitle">Divisi Komunikasi &amp; Informasi (Kominfo)</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5" id="inspectorDesc">
+            Pusat produksi konten visual, pengelolaan infrastruktur sistem informasi portal ormawa fakultas, serta dokumentasi kegiatan akbar kemahasiswaan.
+          </p>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<a class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-md text-label-md font-bold hover:shadow-[0_8px_20px_rgba(201,243,106,0.45)] hover:-translate-y-0.5 transition-all" data-path="anggota" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Buka Daftar Anggota Divisi</span>
+</a>
+</div>
+</div>
+<!-- Inspector 3-Columns Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-sm border-t border-surface-container">
+<!-- Staf & Pengurus Utama -->
+<div class="p-space-sm rounded-2xl bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold mb-3 block">Kadep, Wakadep &amp; Staff Ahli</span>
+<div class="space-y-2.5" id="inspectorStaffList">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an Indonesian male student with friendly expression in university tech club shirt" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAG5hCzLQZWmVpOucXvbOp0n6cL34nZhGL9wQGUsoo9aWkpoQ6malbcKU5EBUj8YMoGJGopcuN6YiEkHTKVI1QOK-RedX8YvlA2A6BzUhHDpFP79jrtZr2ocsD7u-eLeWEjfCrnGDz76pC5I8PEWnMT_WlHBzQwPs4rGxn_MfmmiSqyPfakI00MbljJsjDBSmQ2Dzrlw_tsOrgky73sLCbab-fOfkfMrBkVTnE52nU"/>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block leading-tight">Muhammad Alfa Khakim</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Kepala Departemen</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm font-bold text-primary">TI '24</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an Indonesian female tech student with glasses and laptop, soft studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDswJ99mE2273N6-v6xnpW23LVOImi9G94PFV4gdS72NOrCszxup9fvPhwict24Juk0x5UdzlX-q_0dSXNSOgtQ3Cql5KGdZZJaQCNQ0gjocTmHkVpAFxSb3CqEGJ4ffRb5bwPERA4yBWTilNd42y-GAeO9krVtnDg5PEL3nECt4L_3-urWeFdCl-YlntxcQ0ZH2YqAZC-LwESjS3qGR_pAq6-U7JaOmqjsKxzdEak"/>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block leading-tight">Sufi Sundari</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Sekretaris Departemen</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm font-bold text-primary">TI '24</span>
+</div>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<img class="w-8 h-8 rounded-full object-cover" data-alt="Portrait of an Indonesian male student holding camera and graphic tablet smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvTZlJ8NZXqxRq3ygHvmR2xfQ-V145NhNEFKD6RjvOSR29JGcGbF5JxxDpicZeURBJmX_XviuirJPa6tGNNwOUTlwf4ZXkPzYBgxec185re070SSoAeoXL8X199nh3o2xVWb520huE5DDXRjD2T5gjQtBklJBVB0P8yqBmwlzmvEZRjvc54KZseWkwFJMpHUAesUhAenDI5nd5h5zgxsGWxlDMb5XJ-mHI2bjVaLE"/>
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block leading-tight">Dani Ramadhan</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Staf Ahli Kominfo</span>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm font-bold text-primary">TI '24</span>
+</div>
+</div>
+</div>
+<!-- Program Kerja Utama yang Diampu -->
+<div class="p-space-sm rounded-2xl bg-surface-container-low/70">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold mb-3 block">Program Kerja Unggulan (Proker)</span>
+<div class="space-y-2" id="inspectorProkerList">
+<div class="p-2.5 rounded-xl bg-surface-container-lowest flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">InterFestival</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Eksibisi Karya &amp; Seminar Nasional</span>
+</div>
+<span class="px-2 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-extrabold">Aktif</span>
+</div>
+<div class="p-2.5 rounded-xl bg-surface-container-lowest flex items-center justify-between">
+<div>
+<span class="font-label-md text-label-md font-bold text-on-surface block">Portal Terpadu BEM FASILKOM</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">Sistem Informasi &amp; Database Terpusat</span>
+</div>
+<span class="px-2 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-extrabold">Finalisasi</span>
+</div>
+</div>
+</div>
+<!-- Metrik & Serapan Anggaran -->
+<div class="p-space-sm rounded-2xl bg-surface-container-low/70 flex flex-col justify-between">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold mb-3 block">Realisasi &amp; Serapan Anggaran</span>
+<div class="flex items-baseline justify-between mb-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Realisasi Dana Divisi</span>
+<span class="font-label-md text-label-md font-extrabold text-on-surface">Rp 12.400.000 / Rp 15.000.000</span>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-2.5 bg-surface-container rounded-full overflow-hidden mb-3">
+<div class="h-full bg-secondary-fixed rounded-full" style="width: 82.6%"></div>
+</div>
+<div class="grid grid-cols-2 gap-2 mt-2">
+<div class="p-2 rounded-xl bg-surface-container-lowest text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Indeks Kepuasan</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-primary">4.82<span class="text-label-sm font-normal text-on-surface-variant">/5</span></span>
+</div>
+<div class="p-2 rounded-xl bg-surface-container-lowest text-center">
+<span class="font-label-sm text-label-sm text-on-surface-variant block">LPJ Terunggah</span>
+<span class="font-headline-sm text-headline-sm font-extrabold text-secondary">100%</span>
+</div>
+</div>
+</div>
+<div class="mt-3 flex items-center justify-between pt-2 border-t border-surface-container">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sinkron dengan Bendum</span>
+<span class="font-label-sm text-label-sm font-bold text-tertiary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Terverifikasi
+          </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive JavaScript -->
+<script>
+    (function initOrgChart() {
+      // Zoom Logic
+      let currentZoom = 1;
+      const canvas = document.getElementById('canvasViewport');
+      const zoomDisplay = document.getElementById('zoomLevelDisplay');
+      const zoomIn = document.getElementById('zoomInBtn');
+      const zoomOut = document.getElementById('zoomOutBtn');
+      const zoomReset = document.getElementById('zoomResetBtn');
+
+      function updateZoom(newZoom) {
+        currentZoom = Math.min(Math.max(newZoom, 0.65), 1.35);
+        if (canvas) {
+          canvas.style.transform = `scale(${currentZoom})`;
+          canvas.style.transformOrigin = 'top center';
+        }
+        if (zoomDisplay) {
+          zoomDisplay.textContent = `${Math.round(currentZoom * 100)}%`;
+        }
+      }
+
+      if (zoomIn) zoomIn.addEventListener('click', () => updateZoom(currentZoom + 0.1));
+      if (zoomOut) zoomOut.addEventListener('click', () => updateZoom(currentZoom - 0.1));
+      if (zoomReset) zoomReset.addEventListener('click', () => updateZoom(1.0));
+
+      // Tier Filtering
+      const filterBtns = document.querySelectorAll('.filter-tier-btn');
+      const tierSupervisory = document.getElementById('tierSupervisory');
+      const tier1 = document.getElementById('tier1');
+      const tier2 = document.getElementById('tier2');
+      const tier3 = document.getElementById('tier3');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-secondary-fixed', 'text-on-secondary-fixed', 'font-bold', 'active');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.add('bg-secondary-fixed', 'text-on-secondary-fixed', 'font-bold', 'active');
+          btn.classList.remove('text-on-surface-variant');
+
+          const id = btn.id;
+          if (id === 'filterAll') {
+            tierSupervisory.style.display = 'flex';
+            tier1.style.display = 'flex';
+            tier2.style.display = 'flex';
+            tier3.style.display = 'block';
+          } else if (id === 'filterBPH') {
+            tierSupervisory.style.display = 'none';
+            tier1.style.display = 'flex';
+            tier2.style.display = 'flex';
+            tier3.style.display = 'none';
+          } else if (id === 'filterDivisi') {
+            tierSupervisory.style.display = 'none';
+            tier1.style.display = 'none';
+            tier2.style.display = 'none';
+            tier3.style.display = 'block';
+          }
+        });
+      });
+
+      // Division Interactive Database for Inspector Sheet
+      
+const divisionData = {
+  'bph': {
+    title: 'Badan Pengurus Harian (BPH)',
+    tag: 'BPH',
+    count: '4 Pengurus',
+    desc: 'Badan Pengurus Harian yang bertanggung jawab atas koordinasi, administrasi, kepemimpinan, dan pengelolaan organisasi.',
+    icon: 'groups',
+    staff: [
+      { name: 'Charly Gerald Simanjuntak', role: 'Ketua', dept: 'TI 24' },
+      { name: 'Azzel Fausta Hamda Yuval', role: 'Wakil Ketua', dept: 'TI 24' },
+      { name: 'Fathiyya Zahrotussyifa', role: 'Sekretaris Umum', dept: 'TI 24' },
+      { name: 'Mohamad Nahdi Hidayat', role: 'Bendahara Umum', dept: 'TI 24' }
+    ],
+    proker: []
+  },
+
+  'kominfo': {
+    title: 'Departemen Komunikasi & Informasi (Kominfo)',
+    tag: 'Departemen I',
+    count: '13 Anggota Terdaftar',
+    desc: 'Pusat produksi konten visual, pengelolaan infrastruktur sistem informasi portal ormawa fakultas, serta dokumentasi kegiatan akbar kemahasiswaan.',
+    icon: 'desktop_mac',
+    staff: [
+      { name: 'Muhammad Alfa Khakim', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Sufi Sundari', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Dani Ramadhan', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Alifia Zahra', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Muhammad Rehan', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Bella Novitasari', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Dimas Saputra', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Aisyah Rahmadani', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Andika Putra', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Tiara Anindya', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Hafiz Maulana', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Naufal Hidayat', role: 'Staf Ahli Kominfo', dept: 'TI 24' },
+      { name: 'Sekar Ayuningtyas', role: 'Staf Ahli Kominfo', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'InterFestival', desc: 'Eksibisi Karya & Seminar Nasional', status: 'Aktif' },
+      { name: 'Portal Terpadu BEM FASILKOM', desc: 'Sistem Informasi & Database Terpusat', status: 'Finalisasi' }
+    ]
+  },
+
+  'psdm': {
+    title: 'Departemen Pengembangan Sumber Daya Mahasiswa (PSDM)',
+    tag: 'Departemen II',
+    count: '10 Anggota Terdaftar',
+    desc: 'Bertanggung jawab atas regenerasi, standardisasi kaderisasi teknik, pelatihan kepemimpinan mahasiswa (LKMM-TD/TM), dan pembinaan internal.',
+    icon: 'psychology',
+    staff: [
+      { name: 'Fadhil Syarief Pratomo', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Aulia Vania Shanty', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Raditya Herbayu', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Farritz', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Izzudien Al-Qosam', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Muhammad Fadlan', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Dhea Anastasya', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Ardiansyah Putra', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Nisa Rahma', role: 'Staf Ahli PSDM', dept: 'TI 24' },
+      { name: 'Bima Prakoso', role: 'Staf Ahli PSDM', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'LKMM-TD 2025', desc: 'Latihan Kepemimpinan Tingkat Dasar', status: 'Selesai' },
+      { name: 'FASILKOM Leadership Camp', desc: 'Pembekalan Calon Fungsionaris', status: 'Aktif' }
+    ]
+  },
+
+  'eksternal': {
+    title: 'Departemen Eksternal',
+    tag: 'Departemen III',
+    count: '10 Anggota Terdaftar',
+    desc: 'Membangun jejaring kolaborasi industri, kunjungan perusahaan teknologi, sinergi ikatan alumni FT, serta diplomasi antar-BEM fakultas.',
+    icon: 'handshake',
+    staff: [
+      { name: 'Fahlevi Fahad Aqmadinna', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Aurelia Sanggana', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Indah Aryanti Kartika Santoso', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Muhammad Rafli', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Ananda Putri', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Fajar Nugraha', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Dinda Maharani', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Arya Wicaksana', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Salma Khairunnisa', role: 'Staf Ahli Eksternal', dept: 'TI 24' },
+      { name: 'Ilham Akbar', role: 'Staf Ahli Eksternal', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'FASILKOM Career Expo', desc: 'Kemitraan Rekrutmen 15 Perusahaan', status: 'Persiapan' },
+      { name: 'Alumni Mentorship Talks', desc: 'Forum Diskusi Karir Lintas Angkatan', status: 'Aktif' }
+    ]
+  },
+
+  'sosmas': {
+    title: 'Departemen Sosial Masyarakat (Sosmas)',
+    tag: 'Departemen IV',
+    count: '10 Anggota Terdaftar',
+    desc: 'Garda terdepan pengabdian masyarakat, inisiasi desa mitra binaan teknik berbasis teknologi tepat guna, serta respon tanggap bencana.',
+    icon: 'volunteer_activism',
+    staff: [
+      { name: 'Hema Septia Bemanda', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Anjaly Sallima Nafia', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Rizaldi Hendri Prakoso', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Selly Anggun', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Aditya Pratama', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Nabila Putri Ramadhani', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Farhan Al Ghifari', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Citra Ayu Lestari', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Rizky Maulana', role: 'Staf Ahli Sosmas', dept: 'TI 24' },
+      { name: 'Syifa Nurhaliza', role: 'Staf Ahli Sosmas', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'Lentera Kasih', desc: 'Pembinaan anak yatim piatu', status: 'Aktif' },
+      { name: 'Fasilkom Mengajar', desc: 'Penggalangan Logistik & Relawan', status: 'Selesai' }
+    ]
+  },
+
+  'akasin': {
+    title: 'Departemen Akademik Sinergi (Akasin)',
+    tag: 'Departemen V',
+    count: '10 Anggota Terdaftar',
+    desc: 'Informasi akademik, pendataan mahasiswa berprestasi, forum diskusi, serta pendampingan aspirasi akademik mahasiswa.',
+    icon: 'policy',
+    staff: [
+      { name: 'Rafif Sakha Efendi', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Farras Syuja', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Ammar Farras Fauzan', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'M. Nouval Arrizqi', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'Bagas Ramadhan', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'Muhammad Fikri', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'Alif Zulfikar', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'Rania Safitri', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'Kevin Aditya', role: 'Staf Ahli Akasin', dept: 'TI 24' },
+      { name: 'Zahra Aulia', role: 'Staf Ahli Akasin', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'Iconlab', desc: 'Pendampingan 42 Mahasiswa FASILKOM', status: 'Selesai' },
+      { name: 'Fasilkom Sharing Idea', desc: 'Seminar tentang penggunaan AI dan Blockchain', status: 'Aktif' }
+    ]
+  },
+
+  'mikat': {
+    title: 'Departemen Minat & Bakat (Mikat)',
+    tag: 'Departemen VI',
+    count: '10 Anggota Terdaftar',
+    desc: 'Wadah apresiasi seni, penyelenggaraan liga olahraga teknik tahunan, fasilitasi kontingen olimpiade kampus, dan sanggar musikal fakultas.',
+    icon: 'sports_volleyball',
+    staff: [
+      { name: 'Renhard Padolski Herlambang', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Aldi Taher', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Haikal Akhsan Darmawan', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Fikri Ramadhan', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Nadya Putri', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Rafi Ahmad', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Salsabila Nurfadila', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Yoga Pratama', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Amanda Salsabila', role: 'Staf Ahli Mikat', dept: 'TI 24' },
+      { name: 'Reza Firmansyah', role: 'Staf Ahli Mikat', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'Computer Science Sport & Arts Competition', desc: 'Kompetisi Mini Soccer, Basket, E-Sport, dan Seni', status: 'Aktif' },
+      { name: 'Larut Fasilkom', desc: 'Latihan Rutin seputar Olahraga yang diadakan Mingguan', status: 'Persiapan' }
+    ]
+  },
+
+  'ekokre': {
+    title: 'Departemen Ekonomi Kreatif (Ekokre)',
+    tag: 'Departemen VII',
+    count: '10 Anggota Terdaftar',
+    desc: 'Pilar penggerak finansial dan pengembangan bisnis kreatif di dalam organisasi, pengelolaan kewirausahaan mandiri, serta inkubasi produk kreatif mahasiswa.',
+    icon: 'storefront',
+    staff: [
+      { name: 'Dicky Maulana Aziz', role: 'Kepala Departemen', dept: 'TI 24' },
+      { name: 'Vina Oktaviani', role: 'Sekretaris Departemen', dept: 'TI 24' },
+      { name: 'Ilma Nazzala', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Arkan Dwi Saputra', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Fathir Alfarizi', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Nadia Rahmawati', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Muhammad Iqbal', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Gilang Ramadhan', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Tasya Aprilia', role: 'Staf Ahli Ekokre', dept: 'TI 24' },
+      { name: 'Raka Pradana', role: 'Staf Ahli Ekokre', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'Inkubator Bisnis Mahasiswa', desc: 'Pelatihan Kewirausahaan & Pendanaan', status: 'Aktif' },
+      { name: 'Bazar Kreatif Fasilkom', desc: 'Pameran Produk & Kuliner Mahasiswa', status: 'Aktif' },
+      { name: 'Merchandise & Konveksi Ormawa', desc: 'Produksi Atribut & Souvenir Resmi', status: 'Finalisasi' },
+      { name: 'Digital Storefront Management', desc: 'Seminar Pengelolaan E-Commerce & Pemasaran', status: 'Aktif' }
+    ]
+  },
+
+  'sekretaris': {
+    title: 'Sekretaris Umum & Biro Tata Arsip',
+    tag: 'Badan Pengurus Harian',
+    count: '1 Pengurus',
+    desc: 'Sentralisasi korespondensi digital, manajemen perizinan proposal kegiatan dekanat, serta standarisasi persuratan resmi BEM FASILKOM.',
+    icon: 'description',
+    staff: [
+      { name: 'Fathiyya Zahrotussyifa', role: 'Sekretaris Umum', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'Digital Arsip Cloud FASILKOM', desc: 'Otomatisasi Penomoran Surat Ormawa', status: 'Aktif' }
+    ]
+  },
+
+  'bendahara': {
+    title: 'Kebendaharaan Umum & Kewirausahaan',
+    tag: 'Badan Pengurus Harian',
+    count: '1 Pengurus',
+    desc: 'Pengawasan sirkulasi keuangan kas umum, pencairan termin dana dekanat, pembukuan transparansi publik, dan inkubasi merchandise resmi BEM FASILKOM.',
+    icon: 'account_balance_wallet',
+    staff: [
+      { name: 'Mohamad Nahdi Hidayat', role: 'Bendahara Umum', dept: 'TI 24' }
+    ],
+    proker: [
+      { name: 'Pengelolaan Kas Angkatan dan LPJ', desc: 'Mengelola Kas Angkatan dan Pembuatan Laporan Pertanggungjawaban', status: 'Aktif' }
+    ]
+  }
+};
+
+
+      window.selectDivision = function(key) {
+        const item = divisionData[key];
+        if (!item) return;
+
+        // Visual selection on division cards
+        document.querySelectorAll('.division-card').forEach(c => {
+          c.classList.remove('border-2', 'border-primary');
+        });
+        const activeCard = document.getElementById(`card-${key}`);
+        if (activeCard) {
+          activeCard.classList.add('border-2', 'border-primary');
+        }
+
+        // Populate inspector elements
+        const titleEl = document.getElementById('inspectorTitle');
+        const descEl = document.getElementById('inspectorDesc');
+        const tagEl = document.getElementById('inspectorTag');
+        const countEl = document.getElementById('inspectorMemberCount');
+        const iconEl = document.getElementById('inspectorIcon');
+        const staffContainer = document.getElementById('inspectorStaffList');
+        const prokerContainer = document.getElementById('inspectorProkerList');
+
+        if (titleEl) titleEl.textContent = item.title;
+        if (descEl) descEl.textContent = item.desc;
+        if (tagEl) tagEl.textContent = item.tag;
+        if (countEl) countEl.textContent = item.count;
+        if (iconEl) iconEl.innerHTML = `<span class="material-symbols-outlined text-[28px]">${item.icon}</span>`;
+
+        if (staffContainer && item.staff) {
+          staffContainer.innerHTML = item.staff.map(s => `
+            <div class="flex items-center justify-between">
+              <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-[12px]">
+                  ${s.name.charAt(0)}
+                </div>
+                <div>
+                  <span class="font-label-md text-label-md font-bold text-on-surface block leading-tight">${s.name}</span>
+                  <span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">${s.role}</span>
+                </div>
+              </div>
+              <span class="px-2 py-0.5 rounded-full bg-surface-container-lowest font-label-sm text-label-sm font-bold text-primary">${s.dept}</span>
+            </div>
+          `).join('');
+        }
+
+        if (prokerContainer && item.proker) {
+          prokerContainer.innerHTML = item.proker.map(p => `
+            <div class="p-2.5 rounded-xl bg-surface-container-lowest flex items-center justify-between">
+              <div>
+                <span class="font-label-md text-label-md font-bold text-on-surface block">${p.name}</span>
+                <span class="font-body-sm text-body-sm text-on-surface-variant text-[11px]">${p.desc}</span>
+              </div>
+              <span class="px-2 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-extrabold">${p.status}</span>
+            </div>
+          `).join('');
+        }
+      };
+
+      // Export feedback toast
+      const exportBtn = document.getElementById('exportBtn');
+      if (exportBtn) {
+        exportBtn.addEventListener('click', () => {
+          const original = exportBtn.innerHTML;
+          exportBtn.innerHTML = `<span class="material-symbols-outlined text-[16px] animate-spin">refresh</span><span>Membuat Bagan...</span>`;
+          setTimeout(() => {
+            exportBtn.innerHTML = `<span class="material-symbols-outlined text-[16px]">check</span><span>Bagan Terunduh</span>`;
+            setTimeout(() => {
+              exportBtn.innerHTML = original;
+            }, 2000);
+          }, 800);
+        });
+      }
+    })();
+  </script>
+</div></main></div><script src="../shared/organa-core.js"></script>
+</body></html>

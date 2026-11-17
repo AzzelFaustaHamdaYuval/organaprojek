@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface": "#f7f9ff",
+          "surface-tint": "#37637c",
+          "tertiary-fixed": "#d0e8dd",
+          "on-error-container": "#93000a",
+          "primary-fixed-dim": "#a0cce9",
+          "on-secondary-container": "#506c00",
+          "surface-variant": "#d9e3f2",
+          "surface-container-high": "#dfe9f8",
+          "on-surface": "#121c27",
+          "outline-variant": "#c1c7cd",
+          "primary-container": "#a9d5f2",
+          "on-tertiary-fixed-variant": "#364b43",
+          "on-tertiary": "#ffffff",
+          "on-primary": "#ffffff",
+          "inverse-surface": "#27313d",
+          "error": "#ba1a1a",
+          "on-tertiary-fixed": "#0a1f19",
+          "primary": "#37637c",
+          "background": "#f7f9ff",
+          "surface-container-lowest": "#ffffff",
+          "surface-bright": "#f7f9ff",
+          "on-tertiary-container": "#485d55",
+          "surface-container": "#e4effe",
+          "tertiary": "#4d635b",
+          "inverse-primary": "#a0cce9",
+          "on-error": "#ffffff",
+          "primary-fixed": "#c5e7ff",
+          "inverse-on-surface": "#e9f1ff",
+          "on-primary-container": "#305d76",
+          "tertiary-container": "#bdd5ca",
+          "on-secondary": "#ffffff",
+          "surface-container-highest": "#d9e3f2",
+          "secondary-fixed": "#c7f169",
+          "on-secondary-fixed-variant": "#394e00",
+          "on-secondary-fixed": "#151f00",
+          "error-container": "#ffdad6",
+          "on-background": "#121c27",
+          "secondary-container": "#c5ee66",
+          "surface-container-low": "#eef4ff",
+          "tertiary-fixed-dim": "#b4ccc1",
+          "on-primary-fixed-variant": "#1c4b63",
+          "outline": "#71787d",
+          "secondary": "#4c6700",
+          "on-primary-fixed": "#001e2d",
+          "secondary-fixed-dim": "#acd44f",
+          "on-surface-variant": "#41484c",
+          "surface-dim": "#d1dbea"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "margin-sm": "1rem",
+          "margin": "2rem",
+          "space-xl": "2.5rem",
+          "space-sm": "0.5rem",
+          "space-xs": "0.25rem",
+          "gutter-sm": "1rem",
+          "space-lg": "1.5rem",
+          "space-md": "1rem",
+          "gutter": "1.5rem"
+        },
+        "fontFamily": {
+          "label-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-md": [
+            "Plus Jakarta Sans"
+          ],
+          "display-hero-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "DM Sans"
+          ],
+          "body-lg": [
+            "DM Sans"
+          ],
+          "label-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg-mobile": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "body-md": [
+            "DM Sans"
+          ],
+          "display-hero": [
+            "Plus Jakarta Sans"
+          ]
+        },
+        "fontSize": {
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-md": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "display-hero-mobile": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "800"
+            }
+          ],
+          "headline-lg": [
+            "32px",
+            {
+              "lineHeight": "40px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "700"
+            }
+          ],
+          "body-sm": [
+            "12px",
+            {
+              "lineHeight": "18px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "16px",
+            {
+              "lineHeight": "24px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-sm": [
+            "10px",
+            {
+              "lineHeight": "14px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-lg-mobile": [
+            "24px",
+            {
+              "lineHeight": "32px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "700"
+            }
+          ],
+          "headline-sm": [
+            "18px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "600"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-md": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "display-hero": [
+            "48px",
+            {
+              "lineHeight": "56px",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "800"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-secondary-fixed selection:text-on-secondary-fixed min-h-screen bg-gradient-to-b from-[#DCEEFF] via-[#F5F7F8] to-surface"><aside class="fixed left-0 top-0 h-full w-72 bg-surface-container-lowest/80 backdrop-blur-xl z-50 flex flex-col shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] overflow-y-auto"><div class="h-16 px-space-md flex items-center justify-between gap-space-sm"><div class="flex items-center gap-space-sm"><img alt="Organa Brandmark Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/ALJJyrBbSj2rHhNmdii28Fdd7MeN2cto6fSog2HNye0_yns73QEWA4OCbLKFs9euVFg-W_zVMQYl-TZlTbRB8zBEQtISU8pMlPkSbBrRhzzNh9IVlml7mhTwrr9CWR6PgPKZ1Vo0XnqDVCHjRHhLKNf21sZYBdrfL8y3ymzm-J72InP_Rt2fSaWDXnXFE0mFP1X_Zvmu6JglO6shdVytOVFsUWMfEZYQiTCEc-2GDkJFNC0d"/><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight font-extrabold">ORGANA</span></div><span class="px-space-xs py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase">v2.4</span></div><div class="px-space-md py-space-xs"><div class="p-space-sm rounded-xl bg-surface-container-low/70 flex items-center justify-between"><div class="flex flex-col"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Status Kampus</span><span class="font-label-md text-label-md text-on-surface font-semibold">Universitas Terpadu</span></div><span class="material-symbols-outlined text-primary text-[20px]">verified</span></div></div><div class="flex-1 px-space-md py-space-sm space-y-space-md"><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Utama</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="dashboard" href="#">Dashboard</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="kalender-kegiatan" href="#">Kalender Kegiatan</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Organisasi</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="anggota-members" href="#">Anggota (Members)</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="struktur-organisasi" href="#">Struktur Organisasi</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="divisi-departemen" href="#">Divisi &amp; Departemen</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="periode-kepengurusan" href="#">Periode Kepengurusan</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Program Kerja</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a aria-current="page" class="flex items-center px-space-md py-2 transition-all bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full" data-path="program-kerja" href="#">Program Kerja</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="manajemen-kegiatan" href="#">Manajemen Kegiatan</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="presensi-kehadiran" href="#">Presensi &amp; Kehadiran</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="penugasan-tugas" href="#">Penugasan &amp; Tugas</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Laporan &amp; Evaluasi</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="laporan-lpj" href="#">Laporan LPJ</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="evaluasi-kinerja" href="#">Evaluasi Kinerja</a></nav></div><div class="space-y-space-xs"><p class="px-space-sm font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-bold">Pengaturan</p><nav class="space-y-0.5" data-active-classes="bg-secondary-fixed text-on-secondary-fixed font-bold shadow-[0_4px_12px_rgba(201,243,106,0.35)] rounded-full"><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="pengaturan-organisasi" href="#">Pengaturan Organisasi</a><a class="flex items-center px-space-md py-2 rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="profil" href="#">Profil</a></nav></div></div><div class="p-space-md"><div class="p-space-sm rounded-xl bg-primary-container/40 flex items-center justify-between"><div class="flex items-center gap-space-xs"><span class="material-symbols-outlined text-primary text-[18px]">cloud_done</span><span class="font-label-sm text-label-sm text-on-surface font-semibold">Sinkronisasi Otomatis</span></div><span class="w-2 h-2 rounded-full bg-secondary-fixed animate-pulse"></span></div></div></aside><div class="pl-72"><header class="fixed top-0 left-72 right-0 h-16 bg-surface-container-lowest/80 backdrop-blur-xl z-40 px-space-lg flex items-center justify-between shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex items-center gap-space-md"><div class="flex items-center gap-space-xs px-space-md py-1.5 rounded-full bg-surface-container-low text-on-surface"><span class="material-symbols-outlined text-primary text-[18px]">event_repeat</span><span class="font-label-md text-label-md font-semibold">Periode Aktif: 2024/2025 (BEM FT)</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">expand_more</span></div><div class="relative hidden xl:block w-72"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span><input class="w-full pl-9 pr-space-md py-1.5 rounded-full bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-2 focus:ring-primary-container placeholder:text-on-surface-variant/70" placeholder="Cari program, anggota, dokumen..." type="text"/></div></div><div class="flex items-center gap-space-sm"><button aria-label="Pencarian Cepat" class="xl:hidden p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">search</span></button><button aria-label="Bantuan Cepat" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">help_outline</span></button><div class="relative"><button aria-label="Notifikasi Kegiatan" class="p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors relative"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2.5 h-2.5 rounded-full bg-secondary-fixed ring-2 ring-surface-container-lowest"></span></button></div><div class="h-6 w-px bg-outline-variant/50 mx-space-xs"></div><div class="flex items-center gap-space-sm pl-space-xs"><div class="flex flex-col text-right hidden sm:flex"><span class="font-label-md text-label-md font-bold text-on-surface leading-tight">Arya Pratama</span><span class="font-label-sm text-label-sm text-on-surface-variant">Ketua BEM FT</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 px-gutter lg:px-margin py-space-lg min-h-screen"><div class="flex flex-col w-full">
+<!-- Top Background Ambient Atmosphere Glow -->
+<div class="relative w-full">
+<div class="absolute -top-12 left-1/3 w-96 h-96 bg-primary-fixed/30 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<div class="absolute top-1/4 right-10 w-80 h-80 bg-secondary-fixed/35 rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Header Section -->
+<div class="flex flex-col gap-space-md mb-space-xl">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex items-center gap-space-xs text-on-surface-variant font-label-md text-label-md">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[16px]">home</span>
+          Beranda
+        </a>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface-variant">Program Kerja</span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="text-on-surface font-semibold bg-surface-container-high px-space-xs py-0.5 rounded-md">Manajemen Proker Kabinet</span>
+</nav>
+<!-- Title & CTA Bar -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-space-md">
+<div class="space-y-space-xs max-w-3xl">
+<div class="inline-flex items-center gap-space-xs px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm font-bold tracking-wide uppercase">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary-container"></span>
+            Kabinet Sinergi Cipta 2024/2025
+          </div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+            Program Kerja &amp; Agenda Strategis
+          </h1>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+            Kelola 24 program kerja aktif Kabinet Sinergi Cipta periode 2024/2025 lengkap dengan linimasa, capaian milestone, penyerapan anggaran, dan status validasi dekanat.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap self-start lg:self-center">
+<!-- Secondary Action -->
+<button class="group flex items-center gap-space-xs px-space-md py-2.5 rounded-full bg-surface-container-lowest/80 backdrop-blur-md text-on-surface font-label-lg text-label-lg shadow-sm hover:bg-surface-container-low transition-all" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary group-hover:rotate-12 transition-transform">ios_share</span>
+<span>Ekspor Rekap LPJ</span>
+</button>
+<!-- Primary CTA (Punchy Soft Lime) -->
+<button class="group flex items-center gap-space-xs px-space-lg py-2.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-lg text-label-lg shadow-[0_8px_20px_rgba(201,243,106,0.45)] hover:-translate-y-0.5 transition-all" type="button">
+<span class="material-symbols-outlined text-[20px] font-bold group-hover:rotate-90 transition-transform">add</span>
+<span>Tambah Program Kerja</span>
+</button>
+</div>
+</div>
+</div>
+<!-- 4 High-Craft Floating Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-space-md mb-space-xl">
+<!-- Card 1 -->
+<div class="p-space-lg rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_36px_-8px_rgba(32,42,53,0.1)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="absolute -right-6 -bottom-6 w-24 h-24 rounded-full bg-primary-fixed/20 group-hover:scale-125 transition-transform duration-500"></div>
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Total Program Kerja</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-extrabold tracking-tight">24</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">Proker</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/40 text-on-primary-fixed-variant font-label-sm text-label-sm font-bold">
+            6 Divisi Aktif
+          </span>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary text-[18px]">verified</span>
+<span class="font-body-sm text-body-sm">100% rencana kerja disahkan rapat kerja pleno</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="p-space-lg rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_36px_-8px_rgba(32,42,53,0.1)] transition-all flex flex-col justify-between relative overflow-hidden group">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Proker Berjalan (On Track)</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-extrabold tracking-tight">16</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant">Proker</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+            66.7% Progresif
+          </span>
+</div>
+<div class="space-y-2 pt-space-md mt-space-xs">
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-fixed rounded-full" style="width: 66.7%"></div>
+</div>
+<div class="flex justify-between items-center font-body-sm text-body-sm text-on-surface-variant">
+<span>Fase Eksekusi Q2</span>
+<span class="font-medium text-on-surface font-label-sm text-label-sm">16 dari 24</span>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="p-space-lg rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_36px_-8px_rgba(32,42,53,0.1)] transition-all flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Laporan Pertanggungjawaban</span>
+<div class="flex items-baseline gap-2">
+<span class="font-display-hero-mobile text-display-hero-mobile text-on-surface font-extrabold tracking-tight">6</span>
+<span class="font-body-md text-body-md text-tertiary font-semibold">Selesai</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold">
+            2 Menunggu LPJ
+          </span>
+</div>
+<div class="pt-space-md mt-space-sm flex items-center justify-between text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-center gap-1 text-on-surface font-medium">
+<span class="material-symbols-outlined text-tertiary text-[18px]">task_alt</span>
+<span>8 Tuntas Total</span>
+</div>
+<span class="text-on-surface-variant">Target 100% di Q3</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="p-space-lg rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_16px_36px_-8px_rgba(32,42,53,0.1)] transition-all flex flex-col justify-between relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Realisasi Anggaran Ormawa</span>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-on-surface font-extrabold tracking-tight">Rp 68.450.000</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Pagu: Rp 95.000.000 (72% terserap)</span>
+</div>
+</div>
+<span class="px-2 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm text-label-sm font-bold">
+            Valid
+          </span>
+</div>
+<div class="pt-space-md mt-space-xs space-y-1.5">
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 72%"></div>
+</div>
+<div class="flex justify-between items-center text-[11px] font-label-sm text-on-surface-variant">
+<span>Sisa Pagu: Rp 26.550.000</span>
+<span class="text-secondary font-bold">Audit Sehat</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Filter, Search & View Controls Bar -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest/80 backdrop-blur-xl shadow-[0_8px_24px_-4px_rgba(32,42,53,0.04)] mb-space-lg flex flex-col xl:flex-row items-stretch xl:items-center justify-between gap-space-md">
+<!-- Segmented Pills -->
+<div class="flex items-center gap-1.5 p-1 rounded-full bg-surface-container overflow-x-auto">
+<button class="px-4 py-1.5 rounded-full font-label-md text-label-md bg-surface-container-lowest text-on-surface font-bold shadow-sm whitespace-nowrap" type="button">
+          Semua Proker <span class="ml-1 opacity-70">24</span>
+</button>
+<button class="px-4 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" type="button">
+          Sedang Berjalan <span class="ml-1 opacity-70">16</span>
+</button>
+<button class="px-4 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" type="button">
+          Selesai &amp; LPJ <span class="ml-1 opacity-70">6</span>
+</button>
+<button class="px-4 py-1.5 rounded-full font-label-md text-label-md text-on-surface-variant hover:text-on-surface transition-colors whitespace-nowrap" type="button">
+          Fase Konsep / Revisi <span class="ml-1 opacity-70">2</span>
+</button>
+</div>
+<!-- Search & Select Dropdowns -->
+<div class="flex flex-wrap items-center gap-space-xs sm:gap-space-sm flex-1 xl:justify-end">
+<div class="relative flex-1 sm:w-64 max-w-xs">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">search</span>
+<input class="w-full pl-9 pr-3 py-1.5 rounded-full bg-surface text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary-container" placeholder="Cari proker, PIC, divisi..." type="text"/>
+</div>
+<!-- Filter Divisi -->
+<div class="relative">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">filter_list</span>
+<span>Divisi: Semua</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- Filter Skala -->
+<div class="relative">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container-low text-on-surface font-label-md text-label-md hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">public</span>
+<span>Skala: Semua</span>
+<span class="material-symbols-outlined text-[16px] text-on-surface-variant">expand_more</span>
+</button>
+</div>
+<!-- View Switcher -->
+<div class="flex items-center p-0.5 rounded-full bg-surface-container ml-auto sm:ml-0">
+<button aria-label="Tampilan Kartu" class="p-1.5 rounded-full bg-surface-container-lowest text-on-surface shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">grid_view</span>
+</button>
+<button aria-label="Tampilan Tabel" class="p-1.5 rounded-full text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">view_list</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Main Content: 3-Column Bento/Grid of Rich Interactive Work Program Cards -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md mb-space-xl">
+<!-- Card 1: Technofest FT 2025 -->
+<div class="flex flex-col justify-between rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(32,42,53,0.12)] hover:-translate-y-1 transition-all duration-300">
+<div>
+<!-- Tag Header -->
+<div class="flex items-center justify-between gap-2 mb-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-primary-fixed/60 text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+                Kominfo &amp; Media
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Skala Nasional
+              </span>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              On Track • 82%
+            </span>
+</div>
+<!-- Title & Description -->
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-bold leading-snug">
+            Technofest Fakultas Teknik 2025
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+            Eksibisi inovasi teknologi mahasiswa, hackathon nasional 36 jam, dan seminar karir tech global berkolaborasi dengan inkubator kampus.
+          </p>
+<!-- Metrics Row -->
+<div class="grid grid-cols-3 gap-2 p-space-sm rounded-2xl bg-surface-container-low mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Rangkaian</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">4 Acara</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Panitia</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">32 Mahasiswa</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Anggaran</span>
+<span class="font-label-md text-label-md text-primary font-bold">Rp 24,5 Jt</span>
+</div>
+</div>
+<!-- Progress Bar & Next Milestone -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Progress Milestone</span>
+<span class="font-bold text-on-surface">82%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-fixed rounded-full" style="width: 82%"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container/60 mb-space-md flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">event</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Milestone Terdekat</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Kurasi Final 20 Tim Hackathon (18 Mei 2025)</span>
+</div>
+</div>
+</div>
+<!-- PIC & Footer Action -->
+<div class="pt-space-sm flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="relative flex -space-x-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+                RY
+              </div>
+<div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+                AN
+              </div>
+<div class="w-7 h-7 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+                +3
+              </div>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Rian Yulianto</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Ketua Pelaksana</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:gap-2 transition-all" href="#">
+<span>Rincian</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 2: LKMM-TD -->
+<div class="flex flex-col justify-between rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(32,42,53,0.12)] hover:-translate-y-1 transition-all duration-300">
+<div>
+<!-- Tag Header -->
+<div class="flex items-center justify-between gap-2 mb-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed/60 text-on-tertiary-fixed-variant font-label-sm text-label-sm font-semibold">
+                PSDM
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Wajib Maba
+              </span>
+</div>
+<span class="px-3 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">fact_check</span>
+              Review LPJ • 95%
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-bold leading-snug">
+            LKMM-TD FT 2025
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+            Pelatihan kepemimpinan tingkat dasar, tata kelola sidang organisasi, dan perumusan gagasan awal untuk 300 mahasiswa angkatan 2024.
+          </p>
+<!-- Metrics Row -->
+<div class="grid grid-cols-3 gap-2 p-space-sm rounded-2xl bg-surface-container-low mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Durasi</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">3 Hari</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Peserta</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">300 Maba</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Serapan</span>
+<span class="font-label-md text-label-md text-tertiary font-bold">100% Penuh</span>
+</div>
+</div>
+<!-- Progress Bar & Status Note -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Progress Penuntasan</span>
+<span class="font-bold text-on-surface">95%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 95%"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-tertiary-fixed/30 mb-space-md flex items-start gap-2">
+<span class="material-symbols-outlined text-tertiary text-[18px] mt-0.5">history_edu</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-tertiary-fixed-variant uppercase tracking-wider block">Status Berkas Dekanat</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Menunggu Pengesahan Tanda Tangan WD III</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+              AS
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Anisa Safitri</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadiv PSDM</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-tertiary font-bold hover:gap-2 transition-all" href="#">
+<span>Buka LPJ</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 3: Bina Desa Peduli Sanitasi -->
+<div class="flex flex-col justify-between rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(32,42,53,0.12)] hover:-translate-y-1 transition-all duration-300">
+<div>
+<!-- Tag Header -->
+<div class="flex items-center justify-between gap-2 mb-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold">
+                Sosial Masyarakat
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-primary-container/40 text-on-primary-fixed-variant font-label-sm text-label-sm">
+                Pengabdian
+              </span>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">tune</span>
+              Persiapan • 44%
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-bold leading-snug">
+            Bina Desa Sanitasi &amp; Energi Terbarukan
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+            Instalasi panel surya mini dan filtrasi air bersih di Desa Cibodas Mandiri bekerjasama dengan Ikatan Alumni Teknik.
+          </p>
+<!-- Metrics Row -->
+<div class="grid grid-cols-3 gap-2 p-space-sm rounded-2xl bg-surface-container-low mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Desa Sasaran</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">1 Wilayah</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Relawan</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">26 Orang</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Terkumpul</span>
+<span class="font-label-md text-label-md text-primary font-bold">Rp 9,8 Jt</span>
+</div>
+</div>
+<!-- Progress Bar & Next Milestone -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Donasi &amp; Kesiapan Teknis</span>
+<span class="font-bold text-on-surface">44%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 44%"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container/60 mb-space-md flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">location_on</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Agenda Terdekat</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Survei Lapangan Kedua (24 Mei 2025)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+              FR
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Fajar Ramadhan</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Staff Ahli Sosmas</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:gap-2 transition-all" href="#">
+<span>Rincian</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 4: PORSENITEK 2025 -->
+<div class="flex flex-col justify-between rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(32,42,53,0.12)] hover:-translate-y-1 transition-all duration-300">
+<div>
+<!-- Tag Header -->
+<div class="flex items-center justify-between gap-2 mb-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-secondary-fixed/50 text-on-secondary-fixed-variant font-label-sm text-label-sm font-semibold">
+                Minat &amp; Bakat
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Internal Kampus
+              </span>
+</div>
+<span class="px-3 py-1 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Sedang Jalan • 68%
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-bold leading-snug">
+            PORSENITEK FT 2025
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+            Turnamen futsal, basket, catur, e-sports Valorant, dan pameran fotografi antar 7 himpunan jurusan Fakultas Teknik.
+          </p>
+<!-- Metrics Row -->
+<div class="grid grid-cols-3 gap-2 p-space-sm rounded-2xl bg-surface-container-low mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Cabang</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">8 Lomba</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Atlet</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">420 Orang</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Alokasi</span>
+<span class="font-label-md text-label-md text-primary font-bold">Rp 16,0 Jt</span>
+</div>
+</div>
+<!-- Progress Bar & Next Milestone -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Jadwal Pertandingan</span>
+<span class="font-bold text-on-surface">68%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-secondary-fixed rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container/60 mb-space-md flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">sports_score</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Pertandingan Terdekat</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Semi-Final Futsal &amp; E-Sports (22 Mei 2025)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+              BS
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Bima Sakti</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadiv Mikat</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:gap-2 transition-all" href="#">
+<span>Rincian</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 5: Kajian Kebijakan UKT -->
+<div class="flex flex-col justify-between rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(32,42,53,0.12)] hover:-translate-y-1 transition-all duration-300">
+<div>
+<!-- Tag Header -->
+<div class="flex items-center justify-between gap-2 mb-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed-variant font-label-sm text-label-sm font-semibold">
+                Kastrat &amp; Riset
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Advokasi
+              </span>
+</div>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">edit_note</span>
+              Penyusunan Draf • 55%
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-bold leading-snug">
+            Kajian Kebijakan UKT &amp; Advokasi Kampus
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+            Riset komparatif biaya kuliah tunggal, audiensi pimpinan rektorat, dan pembukaan posko aduan mahasiswa kurang mampu.
+          </p>
+<!-- Metrics Row -->
+<div class="grid grid-cols-2 gap-2 p-space-sm rounded-2xl bg-surface-container-low mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Responden Riset</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">1.450 Mahasiswa</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Kasus Terkawal</span>
+<span class="font-label-md text-label-md text-primary font-bold">12 Kasus Valid</span>
+</div>
+</div>
+<!-- Progress Bar & Next Milestone -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Penyusunan Naskah Kebijakan</span>
+<span class="font-bold text-on-surface">55%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 55%"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container/60 mb-space-md flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">campaign</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Audiensi Resmi</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Audiensi Terbuka dengan Warek II (28 Mei 2025)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+              ZA
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Zahra Amelia</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadiv Kastrat</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:gap-2 transition-all" href="#">
+<span>Buka Riset</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Card 6: FT Career Fair & Industrial Alumni Connect -->
+<div class="flex flex-col justify-between rounded-3xl bg-surface-container-lowest/90 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)] hover:shadow-[0_20px_40px_-12px_rgba(32,42,53,0.12)] hover:-translate-y-1 transition-all duration-300">
+<div>
+<!-- Tag Header -->
+<div class="flex items-center justify-between gap-2 mb-space-sm flex-wrap">
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="px-3 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+                Hubungan Luar (Hublu)
+              </span>
+<span class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm">
+                Kemitraan
+              </span>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">handshake</span>
+              Konfirmasi • 38%
+            </span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs font-bold leading-snug">
+            FT Career Fair &amp; Alumni Connect
+          </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-2 mb-space-md">
+            Pameran karir 25+ partner BUMN &amp; tech startup, walk-in interview langsung, dan mentoring resume oleh ikatan alumni.
+          </p>
+<!-- Metrics Row -->
+<div class="grid grid-cols-2 gap-2 p-space-sm rounded-2xl bg-surface-container-low mb-space-md text-center">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Mitra Industri</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">18 BUMN/Tech</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Target Pengunjung</span>
+<span class="font-label-md text-label-md text-primary font-bold">1.000+ Peserta</span>
+</div>
+</div>
+<!-- Progress Bar & Next Milestone -->
+<div class="space-y-space-xs mb-space-md">
+<div class="flex justify-between items-center font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Konfirmasi Partner &amp; Sponsor</span>
+<span class="font-bold text-on-surface">38%</span>
+</div>
+<div class="w-full h-2 rounded-full bg-surface-container overflow-hidden">
+<div class="h-full bg-primary-container rounded-full" style="width: 38%"></div>
+</div>
+</div>
+<div class="p-space-sm rounded-xl bg-surface-container/60 mb-space-md flex items-start gap-2">
+<span class="material-symbols-outlined text-primary text-[18px] mt-0.5">assignment_turned_in</span>
+<div class="space-y-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Fase Krusial</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">MoU Sponsor Tier Platinum (30 Mei 2025)</span>
+</div>
+</div>
+</div>
+<div class="pt-space-sm flex items-center justify-between mt-auto">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-sm text-label-sm font-bold shadow-sm">
+              DK
+            </div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface leading-tight">Dimas Kusuma</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant text-[10px]">Kadiv Hublu</span>
+</div>
+</div>
+<a class="inline-flex items-center gap-1 font-label-md text-label-md text-primary font-bold hover:gap-2 transition-all" href="#">
+<span>Rincian</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Bottom Atmospheric Summary & Timeline Matrix Ribbon -->
+<div class="rounded-3xl bg-surface-container-lowest/80 backdrop-blur-xl p-space-lg shadow-[0_12px_32px_-8px_rgba(32,42,53,0.06)]">
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-space-md">
+<!-- Left Side: Status Alert & Insights -->
+<div class="flex items-start sm:items-center gap-space-md">
+<div class="w-12 h-12 rounded-2xl bg-secondary-fixed/50 flex items-center justify-center text-on-secondary-fixed flex-shrink-0">
+<span class="material-symbols-outlined text-[28px]">notification_important</span>
+</div>
+<div class="space-y-0.5">
+<div class="flex items-center gap-2">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-bold">Peringatan Tenggat LPJ Triwulan II</h3>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm uppercase font-bold">2 Program</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              LKMM-TD dan PORSENITEK diwajibkan menyelesaikan tanda tangan audit keuangan BEM sebelum 5 Juni 2025 untuk pencairan termin III dekanat.
+            </p>
+</div>
+</div>
+<!-- Right Side: Mini Matriks Timeline Actions -->
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-tertiary text-[16px]">check_circle</span>
+<span>Audit Internal Terpenuhi</span>
+</div>
+<button class="flex items-center gap-1.5 px-4 py-2 rounded-full bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">calendar_month</span>
+<span>Buka Matriks Linimasa Q2</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div></main></div></body></html>
