@@ -26,7 +26,8 @@
     'pengaturan-organisasi': '../13-manajemen-akun/index.html',
     'profil': '../14-profil/index.html',
     'profil-pengguna': '../14-profil/index.html',
-    'landing': '../01-landing-page/index.html'
+    'landing': '../01-landing-page/index.html',
+    'login': '../15-organa-login/index.html'
   };
 
   // Toast System
@@ -476,6 +477,163 @@
     });
   }
 
+  // ---------- Autentikasi: penjaga sesi, data pengguna di header, tombol Keluar ----------
+  const LOGIN_URL = '../15-organa-login/index.html';
+
+  function isPublicPage() {
+    const p = window.location.pathname.replace(/\\/g, '/');
+    return p.includes('01-landing-page') || p.includes('15-organa-login');
+  }
+
+  function goToLogin() {
+    const next = encodeURIComponent(window.location.pathname + window.location.search);
+    window.location.replace(`${LOGIN_URL}?next=${next}`);
+  }
+
+  window.organaLogout = async function () {
+    try {
+      await fetch('/api/auth/logout', { method: 'POST', credentials: 'same-origin' });
+    } catch (e) { /* tetap lanjut ke halaman login */ }
+    window.location.href = LOGIN_URL;
+  };
+
+  function applyUserToHeader(user) {
+    document.querySelectorAll('header .flex.items-center.gap-space-sm.pl-space-xs').forEach(el => {
+      const spans = el.querySelectorAll('.flex.flex-col span');
+      if (spans[0]) spans[0].textContent = user.nama;
+      if (spans[1]) spans[1].textContent = user.jabatan || user.role_label;
+
+      if (!el.parentElement.querySelector('[data-organa-logout]')) {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.setAttribute('data-organa-logout', '');
+        btn.title = 'Keluar';
+        btn.setAttribute('aria-label', 'Keluar dari akun');
+        btn.className = 'p-2 rounded-full hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors';
+        btn.innerHTML = '<span class="material-symbols-outlined text-[20px]">logout</span>';
+        btn.addEventListener('click', window.organaLogout);
+        el.insertAdjacentElement('afterend', btn);
+      }
+    });
+  }
+
+  // ---------- Personalisasi: sapaan & profil mengikuti akun yang login ----------
+  // Hanya berlaku di Dashboard (02) dan Profil (14), karena di sana semua tulisan
+  // "Charly Gerald ..." adalah identitas pengguna yang sedang login (bukan daftar anggota).
+  function personalizeCurrentUserPage(user) {
+    const path = window.location.pathname.replace(/\\/g, '/');
+    if (!path.includes('02-dashboard-utama') && !path.includes('14-profil')) return;
+
+    const jam = new Date().getHours();
+    const waktu = jam < 11 ? 'Pagi' : jam < 15 ? 'Siang' : jam < 18 ? 'Sore' : 'Malam';
+    const kosong = 'Belum diisi';
+    const nama = user.nama;
+    const prodi = user.prodi || '—';
+    const angkatan = user.angkatan || '—';
+    const jabatan = user.jabatan || user.role_label;
+    const inisial = nama.split(/\s+/).filter(Boolean).slice(0, 2).map(w => w[0].toUpperCase()).join('');
+
+    // Urutan penting: pola yang lebih panjang dulu
+    const rules = [
+      [/S1 Teknik Informatika • 2024/g, () => `S1 ${prodi} • ${angkatan}`],
+      [/Teknik Informatika \(Angkatan 2024\)/g, () => `${prodi} (Angkatan ${angkatan})`],
+      [/2024 \(Reguler\)/g, () => `${angkatan} (Reguler)`],
+      [/Teknik Informatika/g, () => prodi],
+      [/Charly Gerald Simanjuntak/g, () => nama],
+      [/Charly Gerald/g, () => nama],
+      [/2400001/g, () => user.nim || '—'],
+      [/KETUA UMUM BEM FASILKOM 2024\/2025/gi, (m) => {
+        const t = `${jabatan} BEM FASILKOM 2024/2025`;
+        return m === m.toUpperCase() ? t.toUpperCase() : t;
+      }],
+      [/charly\.gerald@students\.unnes\.ac\.id/g, () => kosong],
+      [/\+62 812-3456-7890/g, () => user.kontak || kosong],
+      [/Selamat Pagi/g, () => `Selamat ${waktu}`]
+    ];
+
+    // Kartu "Jabatan & Keanggotaan Aktif" (hanya di halaman profil)
+    if (path.includes('14-profil')) {
+      const m = user.keanggotaan || {};
+      const levelLabel = { 1: 'PIMPINAN TERTINGGI', 2: 'PIMPINAN HARIAN', 3: 'KOORDINATOR DIVISI', 4: 'ANGGOTA' };
+      const tidakAda = 'Belum tercatat';
+      const periodeTeks = m.tahun_mulai
+        ? `${m.tahun_mulai}/${m.tahun_selesai} (${m.periode_status ? m.periode_status.charAt(0).toUpperCase() + m.periode_status.slice(1) : '—'})`
+        : '—';
+      rules.push(
+        [/LEVEL 1 - PIMPINAN TERTINGGI/g, () => m.level ? `LEVEL ${m.level} - ${levelLabel[m.level] || 'ANGGOTA'}` : 'BELUM ADA JABATAN'],
+        [/ID: KGT-2024-001/g, () => m.id_keanggotaan ? `ID: KGT-${m.tahun_mulai}-${String(m.id_keanggotaan).padStart(3, '0')}` : 'ID: —'],
+        [/SK-REK\/2024\/091/g, () => tidakAda],
+        [/Ketua Umum BEM FASILKOM(?! 2024)/g, () => `${jabatan} BEM FASILKOM`],
+        [/Badan Pengurus Harian \(BPH\) \/ Presidium Inti/g, () => m.divisi ? `Divisi ${m.divisi}` : 'Belum terdaftar di divisi'],
+        [/2024\/2025 \(Genap\)/g, () => periodeTeks],
+        [/15 Februari 2024/g, () => tidakAda],
+        [/Full Access \(BPH\)/g, () => user.role_label]
+      );
+    }
+
+    // Teks utuh (satu node berisi hanya itu)
+    const exact = [
+      [/^\s*Laki-laki\s*$/, kosong],
+      [/^\s*(CG|AP)\s*$/, inisial]
+    ];
+
+    const skipTags = ['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'OPTION', 'SELECT'];
+    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: (n) => (n.parentElement && !skipTags.includes(n.parentElement.tagName)
+        ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT)
+    });
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach(node => {
+      let text = node.nodeValue;
+      const original = text;
+      exact.forEach(([re, val]) => { if (re.test(text)) text = text.replace(re, val); });
+      rules.forEach(([re, fn]) => { text = text.replace(re, fn); });
+      if (text !== original) node.nodeValue = text;
+    });
+
+    // Kolom yang diisi lewat atribut value (mis. input nama yang terkunci)
+    document.querySelectorAll('input').forEach(inp => {
+      if (inp.value === 'Charly Gerald Simanjuntak') inp.value = nama;
+      if (inp.id === 'input-edit-wa') inp.value = user.kontak || '';
+    });
+
+    // Email SSO tidak ada di database -> jangan tampilkan centang "terverifikasi"
+    document.querySelectorAll('[title="Email SSO Terverifikasi"]').forEach(el => { el.style.display = 'none'; });
+
+    document.title = document.title.replace(/Charly Gerald Simanjuntak/g, nama);
+  }
+
+  async function setupAuth() {
+    // Dibuka langsung dari file:// (tanpa server) -> tidak ada sesi yang bisa dicek
+    if (window.location.protocol === 'file:' || isPublicPage()) return;
+
+    // Sesi habis di tengah jalan: API mengembalikan 401 -> kembali ke login
+    const nativeFetch = window.fetch.bind(window);
+    window.fetch = async function (...args) {
+      const res = await nativeFetch(...args);
+      const target = String(args[0] && args[0].url ? args[0].url : args[0]);
+      if (res.status === 401 && target.includes('/api/') && !target.includes('/api/auth/')) {
+        goToLogin();
+      }
+      return res;
+    };
+
+    try {
+      const res = await nativeFetch('/api/auth/me', { credentials: 'same-origin' });
+      if (res.status === 401) return goToLogin();
+      const json = await res.json();
+      if (json && json.user) {
+        window.ORGANA_USER = json.user;
+        applyUserToHeader(json.user);
+        personalizeCurrentUserPage(json.user);
+      }
+    } catch (e) {
+      console.warn('Organa: gagal memeriksa sesi', e);
+    }
+  }
+
   // Prevent uncaught errors from stopping script execution
   window.addEventListener('error', function (e) {
     console.warn('Organa intercepted error:', e.message);
@@ -486,9 +644,11 @@
     document.addEventListener('DOMContentLoaded', () => {
       injectGlobalModals();
       setupNavigation();
+      setupAuth();
     });
   } else {
     injectGlobalModals();
     setupNavigation();
+    setupAuth();
   }
 })();

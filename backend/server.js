@@ -6,6 +6,9 @@ const fs = require('node:fs');
 const path = require('node:path');
 const url = require('node:url');
 const { db, getDashboardData } = require('./database');
+const auth = require('./auth');
+
+auth.initAuth();
 
 const PORT = process.env.PORT || 3000;
 const ROOT_DIR = path.resolve(__dirname, '..');
@@ -25,14 +28,21 @@ const MIME_TYPES = {
   '.ttf': 'font/ttf'
 };
 
-function sendJson(res, statusCode, data) {
+function sendJson(res, statusCode, data, extraHeaders = {}) {
   res.writeHead(statusCode, {
     'Content-Type': 'application/json; charset=UTF-8',
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, POST, PUT, PATCH, DELETE, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+    'Cache-Control': 'no-store',
+    ...extraHeaders
   });
   res.end(JSON.stringify(data));
+}
+
+function redirect(res, location) {
+  res.writeHead(302, { Location: location, 'Cache-Control': 'no-store' });
+  res.end();
 }
 
 function parseBody(req) {
@@ -40,6 +50,10 @@ function parseBody(req) {
     let body = '';
     req.on('data', chunk => {
       body += chunk.toString();
+      if (body.length > 1_000_000) {
+        reject(new Error('Payload terlalu besar'));
+        req.destroy();
+      }
     });
     req.on('end', () => {
       try {
@@ -70,6 +84,56 @@ const server = http.createServer(async (req, res) => {
   // ==================== REST API ENDPOINTS ====================
   if (pathname.startsWith('/api/')) {
     try {
+      // ---------- AUTENTIKASI (publik) ----------
+      if (pathname === '/api/auth/login' && req.method === 'POST') {
+        const body = await parseBody(req);
+        const result = auth.login({
+          identifier: body.identifier,
+          password: body.password,
+          remember: body.remember === true,
+          ip: req.socket.remoteAddress || 'unknown'
+        });
+        if (!result.ok) {
+          return sendJson(res, result.status, { success: false, error: result.message });
+        }
+        return sendJson(res, 200, { success: true, user: result.user }, { 'Set-Cookie': result.cookie });
+      }
+
+      if (pathname === '/api/auth/me' && req.method === 'GET') {
+        const user = auth.userFromRequest(req);
+        if (!user) return sendJson(res, 401, { success: false, error: 'Belum masuk.' });
+        return sendJson(res, 200, { success: true, user });
+      }
+
+      if (pathname === '/api/auth/logout' && req.method === 'POST') {
+        auth.destroySession(auth.tokenFromRequest(req));
+        return sendJson(res, 200, { success: true }, { 'Set-Cookie': auth.clearCookie() });
+      }
+
+      // Ringkasan angka untuk halaman login (hanya agregat, tanpa data pribadi)
+      if (pathname === '/api/public/login-stats' && req.method === 'GET') {
+        const pengurus = db.prepare(`
+          SELECT COUNT(DISTINCT kg.id_anggota) AS total
+          FROM keanggotaan kg JOIN periode p ON p.id_periode = kg.id_periode
+          WHERE kg.status = 'aktif' AND p.status = 'aktif'
+        `).get().total;
+        const divisi = db.prepare(`
+          SELECT COUNT(*) AS total FROM divisi d JOIN periode p ON p.id_periode = d.id_periode
+          WHERE p.status = 'aktif'
+        `).get().total;
+        const presensi = db.prepare(`
+          SELECT COUNT(*) AS total, SUM(CASE WHEN status_hadir = 'hadir' THEN 1 ELSE 0 END) AS hadir
+          FROM presensi
+        `).get();
+        const rate = presensi.total > 0 ? Math.round((presensi.hadir / presensi.total) * 1000) / 10 : null;
+        return sendJson(res, 200, { success: true, data: { pengurus, divisi, ratePresensi: rate } });
+      }
+
+      // ---------- Semua endpoint lain wajib login ----------
+      if (!auth.userFromRequest(req)) {
+        return sendJson(res, 401, { success: false, error: 'Sesi tidak valid. Silakan masuk kembali.' });
+      }
+
       // 1. Dashboard complete data
       if (pathname === '/api/dashboard' && req.method === 'GET') {
         const periodeId = parsedUrl.query.periode ? parseInt(parsedUrl.query.periode) : 1;
@@ -180,16 +244,49 @@ const server = http.createServer(async (req, res) => {
   }
 
   // ==================== STATIC FILE HANDLER ====================
-  let safePath = path.normalize(decodeURIComponent(pathname)).replace(/^(\.\.[\/\\])+/, '');
-  if (safePath === '/' || safePath === '\\') {
-    safePath = '/02-dashboard-utama/index.html';
+  let decodedPath;
+  try {
+    decodedPath = decodeURIComponent(pathname);
+  } catch {
+    res.writeHead(400, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end('Bad request');
+    return;
   }
 
+  // Alur utama: halaman awal = landing page (tombol "Masuk" -> login -> dashboard)
+  if (decodedPath === '/' || decodedPath === '\\') {
+    return redirect(res, '/01-landing-page/index.html');
+  }
+
+  // Jangan pernah sajikan kode server, database, git, atau berkas tersembunyi
+  if (/^\/(backend|node_modules)(\/|$)/i.test(decodedPath) ||
+      /(^|\/)\.[^/]/.test(decodedPath) ||
+      /^\/package(-lock)?\.json$/i.test(decodedPath)) {
+    res.writeHead(404, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end(`File not found: ${pathname}`);
+    return;
+  }
+
+  let safePath = path.normalize(decodedPath).replace(/^(\.\.[\/\\])+/, '');
   let filePath = path.join(ROOT_DIR, safePath);
+  if (!filePath.startsWith(ROOT_DIR)) {
+    res.writeHead(403, { 'Content-Type': 'text/plain; charset=UTF-8' });
+    res.end('Forbidden');
+    return;
+  }
 
   // If path is a directory, look for index.html
   if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
     filePath = path.join(filePath, 'index.html');
+  }
+
+  // Halaman dashboard (folder 02-14) hanya untuk pengguna yang sudah login
+  const isProtectedPage =
+    /^\/(0[2-9]|1[0-4])-[^/]+(\/|$)/.test(decodedPath) &&
+    path.extname(filePath).toLowerCase() === '.html';
+  if (isProtectedPage && !auth.userFromRequest(req)) {
+    const next = encodeURIComponent(pathname + (parsedUrl.search || ''));
+    return redirect(res, `/15-organa-login/index.html?next=${next}`);
   }
 
   fs.stat(filePath, (err, stats) => {
@@ -218,5 +315,6 @@ server.listen(PORT, () => {
   console.log(`  URL: http://localhost:${PORT}`);
   console.log(`  Dashboard: http://localhost:${PORT}/02-dashboard-utama/index.html`);
   console.log(`  Landing:   http://localhost:${PORT}/01-landing-page/index.html`);
+  console.log(`  Login:     http://localhost:${PORT}/15-organa-login/index.html`);
   console.log(`======================================================\n`);
 });
